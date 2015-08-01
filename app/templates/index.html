@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block header %}
+	<h1>Head woot!</h1>
+{% endblock %}
+
+{% block content %}
+	{% for interest in interests %}
+		<h2>{{ interest }}</h2><br />
+		<p>{{ interests[interest] }}</p>
+	{% endfor %}
+{% endblock %}

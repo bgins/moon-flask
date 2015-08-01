@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block header %}
+	<ul>
+	{% for interest in interests %}	
+		<a href="{{ url_for('interest', area=interest) }}"><li>{{ interest }}</li></a>
+	{% endfor %}
+	</ul>
+	<h1>Head woot!</h1>
+{% endblock %}
+
+{% block content %}
+	{% for interest in interests %}
+		<h2>{{ interest }}</h2><br />
+		<p>{{ interests[interest] }}</p>
+	{% endfor %}
+{% endblock %}
