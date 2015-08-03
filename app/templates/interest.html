@@ -12,6 +12,6 @@
 {% block content %}
 	{% for interest in interests %}
 		<h2>{{ interest }}</h2><br />
-		<p>{{ interests[interest] }}</p>
+		<p>{{ interests[interest]['about'] }}</p>
 	{% endfor %}
 {% endblock %}
