@@ -12,6 +12,7 @@
 {% block content %}
 	{% for interest in interests %}
 		<h2>{{ interest }}</h2><br />
+		<img src="{{ url_for('static', filename='img/{}.png'.format(interests[interest]['image'])) }}" />
 		<p>{{ interests[interest]['about'] }}</p>
 	{% endfor %}
 {% endblock %}
