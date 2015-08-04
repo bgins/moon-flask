@@ -3,7 +3,7 @@
 {% block header %}
 	<ul>
 	{% for interest in interests %}	
-		<a href="{{ url_for('interest', area=interest) }}"><li>{{ interest }}</li></a>
+		<a href="{{ url_for('interest', area=interest) }}" style="color: {{ interests[interest]['color'] }};"><li>{{ interest }}</li></a>
 	{% endfor %}
 	</ul>
 	<h1>Head woot!</h1>
