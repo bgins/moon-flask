@@ -2,9 +2,9 @@ from app import app
 from flask import render_template, url_for
 
 
-interests = {'code': {'about': 'This is the code page', 'image': 'code', 'color': 'red'}, 
-			 'text': {'about': 'This is the text page', 'image': 'text', 'color': 'blue'},
-			 'music':{'about': 'This is the music page', 'image': 'music', 'color': 'green'}
+interests = {'code': {'about': 'This is the code page', 'color': 'red'}, 
+			 'text': {'about': 'This is the text page', 'color': 'blue'},
+			 'music':{'about': 'This is the music page', 'color': 'green'}
 		}
 
 
