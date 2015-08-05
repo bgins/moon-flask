@@ -3,7 +3,7 @@
 {% block header %}
 	<ul>
 	{% for interest in interests %}	
-		<a href="{{ url_for('interest', area=interest) }}" style="color: {{ interests[interest]['color'] }};"><li>{{ interest }}</li></a>
+		<a href="{{ url_for('interest', area=interests[interest]['area']) }}" style="color: {{ interests[interest]['color'] }};"><li>{{ interests[interest]['area'] }}</li></a>
 	{% endfor %}
 	</ul>
 	<h1>Head woot!</h1>
@@ -11,8 +11,8 @@
 
 {% block content %}
 	{% for interest in interests %}
-		<h2>{{ interest }}</h2><br />
-		<img src="{{ url_for('static', filename='img/{}.png'.format(interest)) }}" />
+		<h2>{{ interests[interest]['area'] }}</h2><br />
+		<img src="{{ url_for('static', filename='img/{}.png'.format(interests[interest]['area'])) }}" />
 		<p>{{ interests[interest]['about'] }}</p>
 	{% endfor %}
 {% endblock %}
