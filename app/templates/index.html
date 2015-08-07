@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
 {% block header %}
-	<h1>Head woot!</h1>
+	<div style="text-align:center;">
+		<h1>{{ user[1]['name'] }}</h1>
+		<a href="#"><img style="max-width:200px;" src="{{ url_for('static', filename='img/{}.png'.format(user[1]['name'])) }}" /></a>
+	</div>
 {% endblock %}
 
 {% block content %}
