@@ -10,8 +10,9 @@ body, input, button, textarea {
   /*Global font*/
 }
 body {
+  margin: 0;
   /*color:*/
-  /*background:*/
+  background: #eee;
   position: relative;
 }
 a {
@@ -44,7 +45,25 @@ p {
 
 
 /*Header*/
-
+header {
+  background: #54B2AE;
+  padding: 5em 0;
+  text-align: center;
+}
+div.preheader {
+  padding-top: 1em;
+  text-align: center;
+}
+.profile-picture {
+  width: 125px;
+  height: 125px;
+  margin-bottom: -55px;
+  border-radius: 100px;
+  -webkit-box-shadow: 0px 3px 0px 15px #eee;
+  -moz-box-shadow: 0px 3px 0px 15px #eee;
+  box-shadow: 0px 3px 0px 15px #eee;
+  display: inline-block;
+}
 
 /*Form Elements*/
 

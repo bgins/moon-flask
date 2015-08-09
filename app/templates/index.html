@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 
 {% block header %}
-	<div style="text-align:center;">
-		<h1>{{ user[1]['name'] }}</h1>
-		<a href="#"><img style="max-width:200px;" src="{{ url_for('static', filename='img/{}.png'.format(user[1]['name'])) }}" /></a>
+	<div class="container">
+		<div class="preheader row">
+			<a href="#"><img class="profile-picture" src="{{ url_for('static', filename='img/{}.png'.format(user[1]['name'])) }}" /></a>
+		</div>
+	</div>
+	<header>
+		<div class="container">
+			<div class="row">
+				<h1>{{ user[1]['name'] }}</h1>
+			</div>
+		</div>
+	</header>
+
 	</div>
 {% endblock %}
 
