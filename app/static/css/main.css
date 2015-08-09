@@ -1,0 +1,59 @@
+/* Color palette
+Backgrounds: #fff, #54B2AE
+Accents: #ABFFFB
+Text:
+Link: */
+
+
+/*General*/
+body, input, button, textarea {
+  /*Global font*/
+}
+body {
+  /*color:*/
+  /*background:*/
+  position: relative;
+}
+a {
+  display: block;
+  /*color:*/
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+
+
+/*Typography*/
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+h1 {
+
+}
+h2 {
+
+}
+h3 {
+
+}
+p {
+  /*font-size:*/
+}
+
+
+
+/*Header*/
+
+
+/*Form Elements*/
+
+
+/*Navbar*/
+
+
+
+/*Other specific elements*/
+
+
+/*Footer*/
