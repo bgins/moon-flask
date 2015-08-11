@@ -69,7 +69,25 @@ div.preheader {
 
 
 /*Navbar*/
+nav {
+  /*font-family:*/
+}
+nav li {
+  margin-bottom: 0;
+  line-height: 2em;
+}
 
+nav.about {
+  text-align: center;
+  font-size: 2em;
+  padding-top: 1.5em;
+}
+nav.about li {
+  line-height: 1em;
+}
+nav.about li:nth-child(n+2) {
+  border-left: 1px solid #696758;
+}
 
 
 /*Other specific elements*/

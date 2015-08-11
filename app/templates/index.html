@@ -18,8 +18,11 @@
 {% endblock %}
 
 {% block content %}
+<div class="container">
+	<section class="row">
+		<nav class="about">
+			<ul>
 	{% for interest in interests %}
-		<h2>{{ interests[interest]['area'] }}</h2><br />
-		<p>{{ interests[interest]['about'] }}</p>
+		<li class="four columns"><a href="{{ url_for('interest', area=interests[interest]['area']) }}" class ="about" style="color: {{ interests[interest]['color'] }};">{{ interests[interest]['area'] }}</a></li>
 	{% endfor %}
 {% endblock %}
