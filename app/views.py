@@ -1,10 +1,9 @@
 from app import app
 from flask import render_template, url_for
 
-
-interests = {1 : {'area':'code', 'about': 'This is the code page', 'color': 'red', 'FKUserId': 1}, 
-			 2 : {'area':'text', 'about': 'This is the text page', 'color': 'blue', 'FKUserId': 1},
-			 3 : {'area':'music', 'about': 'This is the music page', 'color': 'green', 'FKUserId': 1}
+interests = {1 : {'area':'code', 'about': 'This is the code page', 'color': '#936FB2', 'FKUserId': 1}, 
+			 2 : {'area':'text', 'about': 'This is the text page', 'color': '#AF4415', 'FKUserId': 1},
+			 3 : {'area':'music', 'about': 'This is the music page', 'color': '#5487B2', 'FKUserId': 1}
 		}
 
 user = {1: {'name': 'admin','password': 'default'}}
