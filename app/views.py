@@ -17,8 +17,15 @@ posts = {1: {'title': 'Python', 'text': 'I like Python', 'FK_IntrestId': 1},
 
 @app.route('/')
 def index():
-	return render_template('index.html', interests=interests, user=user)
+	link_width = calculate_width();
+	return render_template('index.html', interests=interests, user=user, link_width=link_width)
 
 @app.route('/interest/<area>')
 def interest(area):
 	return render_template('interest.html', interests=interests)
+
+def calculate_width():
+	link_width = int(12 / len(interests))
+	# Convert number to word for skeleton.css class - five links won't center properly!
+	numbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"]
+	return numbers[link_width]
