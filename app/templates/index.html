@@ -3,13 +3,14 @@
 {% block header %}
 	<div class="container">
 		<div class="preheader row">
-			<a href="#"><img class="profile-picture" src="{{ url_for('static', filename='img/{}.png'.format(user[1]['name'])) }}" /></a>
+			<a href="#"><img class="profile-picture" src="{{ url_for('static', filename='img/{}.png'.format(user[1]['name']).replace(' ','')) }}" /></a>
 		</div>
 	</div>
 	<header>
 		<div class="container">
 			<div class="row">
 				<h1>{{ user[1]['name'] }}</h1>
+				<h3>This is a dynammic personal webpage app. You can use it for a portfolio or for another purpose. Gentile Bellini serves as our sample user.</h3>
 			</div>
 		</div>
 	</header>
