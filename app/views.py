@@ -3,7 +3,10 @@ from flask import render_template, url_for
 
 interests = {1 : {'area':'code', 'about': 'This is the code page', 'color': '#936FB2', 'FKUserId': 1}, 
 			 2 : {'area':'text', 'about': 'This is the text page', 'color': '#AF4415', 'FKUserId': 1},
-			 3 : {'area':'music', 'about': 'This is the music page', 'color': '#5487B2', 'FKUserId': 1}
+			 3 : {'area':'music', 'about': 'This is the music page', 'color': '#5487B2', 'FKUserId': 1},
+			 4 : {'area':'music', 'about': 'This is the music page', 'color': '#5487B2', 'FKUserId': 1},
+
+
 		}
 
 user = {1: {'name': 'Gentile Bellini','password': 'default'}}
@@ -25,7 +28,10 @@ def interest(area):
 	return render_template('interest.html', interests=interests)
 
 def calculate_width():
-	link_width = int(12 / len(interests))
 	# Convert number to word for skeleton.css class - five links won't center properly!
 	numbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"]
-	return numbers[link_width]
+	offset = None
+	if len(interests) == 5:
+		offset = True
+	link_width = int(12 / len(interests))
+	return {'width':numbers[link_width], 'offset':offset}

@@ -24,8 +24,11 @@
 		<nav class="about">
 			<ul>
 			<!-- Need to dynamically assign columns for li -->
+			{% if link_width['offset'] %}
+				<pre class="one column">    </pre>
+			{% endif %}
 			{% for interest in interests %}
-				<li class="{{ link_width }} columns"><a href="{{ url_for('interest', area=interests[interest]['area']) }}" class ="about" style="color: {{ interests[interest]['color'] }};">{{ interests[interest]['area'] }}</a></li>
+				<li class="{{ link_width['width'] }} columns"><a href="{{ url_for('interest', area=interests[interest]['area']) }}" class ="about" style="color: {{ interests[interest]['color'] }};">{{ interests[interest]['area'] }}</a></li>
 			{% endfor %}
 			</ul>
 		</nav>

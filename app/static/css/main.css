@@ -85,10 +85,9 @@ nav.about {
 nav.about li {
   line-height: 1em;
 }
-nav.about li:nth-child(n+2) {
+nav.about li:nth-of-type(n+2) {
   border-left: 1px solid #696758;
 }
-
 
 /*Other specific elements*/
 
