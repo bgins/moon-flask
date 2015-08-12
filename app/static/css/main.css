@@ -72,7 +72,13 @@ div.preheader {
 nav {
   /*font-family:*/
 }
+nav ul {
+  display:flex; 
+  flex-wrap: nowrap; 
+  align-content: center;
+}
 nav li {
+  flex-grow: 1;
   margin-bottom: 0;
   line-height: 2em;
 }
