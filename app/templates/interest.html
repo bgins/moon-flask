@@ -1,12 +1,25 @@
 {% extends "base.html" %}
 
 {% block header %}
-	<ul>
-	{% for interest in interests %}	
-		<a href="{{ url_for('interest', area=interests[interest]['area']) }}" style="color: {{ interests[interest]['color'] }};"><li>{{ interests[interest]['area'] }}</li></a>
-	{% endfor %}
-	</ul>
-	<h1>Head woot!</h1>
+	<header class="interest">
+		<div class="container">	
+			<div class="row">
+				<nav class="interest twelve columns">
+					<ul class="interest">
+					{% for interest in interests %}
+						<li><a href="{{ url_for('interest', area=interests[interest]['area']) }}" class ="interest" style="color: {{ interests[interest]['color'] }};">{{ interests[interest]['area'] }}</a></li>
+					{% endfor %}
+					</ul>
+				</nav>
+			</div>
+			<div class="row">
+				<img src="{{ url_for('static', filename='img/{}.jpg'.format(area)) }}" />
+			</div>
+			<div class="row">
+				<h2>{{ area }}</h2>
+			</div>
+		</div>
+	</header>
 {% endblock %}
 
 {% block content %}

@@ -1,9 +1,9 @@
 from app import app
 from flask import render_template, url_for
 
-interests = {1 : {'area':'code', 'about': 'This is the code page', 'color': '#936FB2', 'FKUserId': 1}, 
-			 2 : {'area':'text', 'about': 'This is the text page', 'color': '#AF4415', 'FKUserId': 1},
-			 3 : {'area':'music', 'about': 'This is the music page', 'color': '#5487B2', 'FKUserId': 1}
+interests = {1 : {'area':'Venice', 'about': 'My original home', 'color': '#936FB2', 'FKUserId': 1}, 
+			 2 : {'area':'Constantinople', 'about': 'A peace time cultural ambassador', 'color': '#AF4415', 'FKUserId': 1},
+			 3 : {'area':'Greece', 'about': 'Time in Greece', 'color': '#5487B2', 'FKUserId': 1}
 		}
 
 user = {1: {'name': 'Gentile Bellini','password': 'default'}}
@@ -21,4 +21,4 @@ def index():
 
 @app.route('/interest/<area>')
 def interest(area):
-	return render_template('interest.html', interests=interests)
+	return render_template('interest.html', area=area, interests=interests)

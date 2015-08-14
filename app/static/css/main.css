@@ -33,7 +33,9 @@ h1 {
 
 }
 h2 {
-
+/*  font-family: 
+  font-size: 2em;*/
+  margin: 5px 0;
 }
 h3 {
 
@@ -64,12 +66,24 @@ div.preheader {
   box-shadow: 0px 3px 0px 15px #eee;
   display: inline-block;
 }
+header.interest {
+  padding: 0 0 40px;
+  background: #ddd;
+}
+header.interest img {
+  /*width: 20%;*/
+  max-width: 11em;
+  margin: 60px 0 40px;
+  display: inline-block;
+}
 
 /*Form Elements*/
 
 
 /*Navbar*/
 nav {
+  text-align: center;
+  font-size: 1em;
   /*font-family:*/
 }
 nav ul {
@@ -84,7 +98,6 @@ nav li {
 }
 
 nav.about {
-  text-align: center;
   font-size: 2em;
   padding-top: 1.5em;
 }
@@ -93,6 +106,15 @@ nav.about li {
 }
 nav.about li:nth-of-type(n+2) {
   border-left: 1px solid #696758;
+}
+
+nav.interest {
+  font-size: 1.3em;
+  line-height: 1.5em;
+  border-bottom: 1px solid #333;
+}
+nav ul.interest {
+  margin: 0;
 }
 
 /*Other specific elements*/
