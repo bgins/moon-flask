@@ -6,7 +6,7 @@ interests = {1 : {'area':'Venice', 'about': 'My original home', 'color': '#936FB
 			 3 : {'area':'Greece', 'about': 'Time in Greece', 'color': '#5487B2', 'FKUserId': 1}
 		}
 
-user = {1: {'name': 'Gentile Bellini','password': 'default'}}
+user = {1: {'name': 'Moon Flask','password': 'default', 'color': '#111'}}
 
 posts = {1: {'title': 'Python', 'text': 'I like Python', 'FK_IntrestId': 1},
 		 2: {'title': 'Flask', 'text': 'This is built on Flask', 'FK_IntrestId': 1},
@@ -17,8 +17,8 @@ posts = {1: {'title': 'Python', 'text': 'I like Python', 'FK_IntrestId': 1},
 
 @app.route('/')
 def index():
-	return render_template('index.html', interests=interests, user=user)
+	return render_template('index.html', user=user, interests=interests)
 
 @app.route('/interest/<area>')
 def interest(area):
-	return render_template('interest.html', area=area, interests=interests)
+	return render_template('interest.html', user=user, interests=interests, area=area)

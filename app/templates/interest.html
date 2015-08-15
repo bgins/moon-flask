@@ -6,6 +6,7 @@
 			<div class="row">
 				<nav class="interest twelve columns">
 					<ul class="interest">
+						<li><a href="{{ url_for('index') }}" class ="interest" style="color: {{ user[1]['color'] }};">About</a></li>
 					{% for interest in interests %}
 						<li><a href="{{ url_for('interest', area=interests[interest]['area']) }}" class ="interest" style="color: {{ interests[interest]['color'] }};">{{ interests[interest]['area'] }}</a></li>
 					{% endfor %}
