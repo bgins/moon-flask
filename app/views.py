@@ -6,7 +6,7 @@ interests = {1 : {'area':'Venice', 'about': 'My original home', 'color': '#936FB
 			 3 : {'area':'Greece', 'about': 'Time in Greece', 'color': '#5487B2', 'FKUserId': 1}
 		}
 
-user = {1: {'name': 'Moon Flask','password': 'default', 'color': '#111'}}
+user = {1: {'name': 'Moon Flask','password': 'default', 'color': '#111111'}}
 
 posts = {1: {'title': 'Python', 'text': 'I like Python', 'FK_IntrestId': 1},
 		 2: {'title': 'Flask', 'text': 'This is built on Flask', 'FK_IntrestId': 1},
