@@ -11,13 +11,14 @@ body, input, button, textarea {
 }
 body {
   margin: 0;
-  /*color: #eee;*/
-  background: #fff;
+  color: #232526;
+  background: #EEE6AB;
   position: relative;
 }
+
 a {
   display: block;
-  color: #111;
+  color: #36393B;
   text-decoration: none;
   transition: color 0.9s ease-out;
 }
@@ -51,9 +52,9 @@ p {
 
 /*Header*/
 header {
-  /*background: #54B2AE;*/
-  background: url(../img/texture6.png);
-  /*color: #ddd;*/
+  background: #36393B;
+  /*background: url(../img/texture6.png);*/
+  color: #EEE6AB;
   padding: 5em 0;
   text-align: center;
 }
@@ -66,15 +67,16 @@ div.preheader {
   height: 125px;
   margin-bottom: -55px;
   border-radius: 100px;
-  -webkit-box-shadow: 0px 3px 0px 15px #fff;
-  -moz-box-shadow: 0px 3px 0px 15px #fff;
-  box-shadow: 0px 3px 0px 15px #fff;
+  -webkit-box-shadow: 0px 3px 0px 15px #EEE6AB;
+  -moz-box-shadow: 0px 3px 0px 15px #EEE6AB;
+  box-shadow: 0px 3px 0px 15px #EEE6AB;
   display: inline-block;
 }
 header.interest {
   padding: 0 0 40px;
-  /*background: #eee;*/
-  border-bottom: 1px solid #888;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
+  box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
   /*background: #eee url(../img/texture5.png);*/
 }
 header.interest img {
@@ -104,7 +106,7 @@ nav li {
   line-height: 2em;
 }
 a:hover {
-  color: #256966;
+  color: #e03643;
   transition: color 0.9s ease-out;
 }
 
@@ -122,11 +124,19 @@ nav.about li:nth-of-type(n+2) {
 nav.interest {
   font-size: 1.3em;
   line-height: 1.5em;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #696758;
 }
 nav ul.interest {
   margin: 0;
 }
+nav.interest a {
+  color: #EEE6AB;
+}
+nav.interest a:hover {
+  color: #e03643;
+  transition: color 0.9s ease-out;
+}
+
 
 /*Other specific elements*/
 
