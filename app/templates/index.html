@@ -24,17 +24,10 @@
 		<nav class="about">
 			<ul>
 			{% for interest in interests %}
-				<li><a href="{{ url_for('interest', area=interests[interest]['area']) }}" class ="about" style="color: {{ interests[interest]['color'] }};">{{ interests[interest]['area'] }}</a></li>
+				<li><a href="{{ url_for('interest', area=interests[interest]['area']) }}" class ="about">{{ interests[interest]['area'] }}</a></li>
 			{% endfor %}
 			</ul>
 		</nav>
 	</section>
 </div>
-
-<script type="text/javascript">
-$('li').hover( function() { 
-    $('a', this).css('color', '#aa1111');
-});
-</script>
-
 {% endblock %}

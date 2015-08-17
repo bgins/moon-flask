@@ -17,7 +17,7 @@ body {
 }
 a {
   display: block;
-  /*color:*/
+  color: #000;
   text-decoration: none;
 }
 img {
@@ -70,7 +70,7 @@ div.preheader {
 }
 header.interest {
   padding: 0 0 40px;
-  background: #ddd;
+  background: #54B2AE;
 }
 header.interest img {
   /*width: 20%;*/
@@ -97,6 +97,9 @@ nav li {
   flex-grow: 1;
   margin-bottom: 0;
   line-height: 2em;
+}
+a:hover {
+  color: #AF4415;
 }
 
 nav.about {
