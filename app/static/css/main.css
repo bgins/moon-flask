@@ -73,6 +73,7 @@ div.preheader {
 header.interest {
   padding: 0 0 40px;
   background: #eee;
+  border-bottom: 1px solid #888;
 }
 header.interest img {
   /*width: 20%;*/
@@ -119,7 +120,7 @@ nav.about li:nth-of-type(n+2) {
 nav.interest {
   font-size: 1.3em;
   line-height: 1.5em;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #ccc;
 }
 nav ul.interest {
   margin: 0;
