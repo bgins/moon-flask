@@ -12,7 +12,7 @@ body, input, button, textarea {
 body {
   margin: 0;
   /*color: #eee;*/
-  background: #eee;
+  background: #fff;
   position: relative;
 }
 a {
@@ -51,7 +51,8 @@ p {
 
 /*Header*/
 header {
-  background: #54B2AE;
+  /*background: #54B2AE;*/
+  background: url(../img/texture6.png);
   /*color: #ddd;*/
   padding: 5em 0;
   text-align: center;
@@ -65,15 +66,16 @@ div.preheader {
   height: 125px;
   margin-bottom: -55px;
   border-radius: 100px;
-  -webkit-box-shadow: 0px 3px 0px 15px #eee;
-  -moz-box-shadow: 0px 3px 0px 15px #eee;
-  box-shadow: 0px 3px 0px 15px #eee;
+  -webkit-box-shadow: 0px 3px 0px 15px #fff;
+  -moz-box-shadow: 0px 3px 0px 15px #fff;
+  box-shadow: 0px 3px 0px 15px #fff;
   display: inline-block;
 }
 header.interest {
   padding: 0 0 40px;
-  background: #eee;
+  /*background: #eee;*/
   border-bottom: 1px solid #888;
+  /*background: #eee url(../img/texture5.png);*/
 }
 header.interest img {
   /*width: 20%;*/
