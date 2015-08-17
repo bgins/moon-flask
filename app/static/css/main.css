@@ -11,14 +11,15 @@ body, input, button, textarea {
 }
 body {
   margin: 0;
-  /*color:*/
+  /*color: #eee;*/
   background: #eee;
   position: relative;
 }
 a {
   display: block;
-  color: #000;
+  color: #111;
   text-decoration: none;
+  transition: color 0.9s ease-out;
 }
 img {
   max-width: 100%;
@@ -51,6 +52,7 @@ p {
 /*Header*/
 header {
   background: #54B2AE;
+  /*color: #ddd;*/
   padding: 5em 0;
   text-align: center;
 }
@@ -70,7 +72,7 @@ div.preheader {
 }
 header.interest {
   padding: 0 0 40px;
-  background: #54B2AE;
+  background: #eee;
 }
 header.interest img {
   /*width: 20%;*/
@@ -99,7 +101,8 @@ nav li {
   line-height: 2em;
 }
 a:hover {
-  color: #AF4415;
+  color: #256966;
+  transition: color 0.9s ease-out;
 }
 
 nav.about {
