@@ -29,12 +29,14 @@
 <section class="posts">
 	<div class="container">
 		{% for post in posts %}
+			{% if posts[post]['FK_InterestId'] == area %}
 			<div class="row">
 				<h3>{{ posts[post]['title'] }}</h3>
 			</div>
 			<div class="row boxy">
 				<p>{{ posts[post]['text'] }}</p>
 			</div>
+			{% endif %}
 		{% endfor %}
 	</div>
 </section>
