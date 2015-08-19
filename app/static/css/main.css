@@ -10,17 +10,17 @@ body, input, button, textarea {
   /*Global font*/
 }
 body {
+  text-align: center;
   margin: 0;
   color: #232526;
   background: #EEE6AB;
   position: relative;
 }
-
 a {
   display: block;
   color: #36393B;
   text-decoration: none;
-  transition: color 0.9s ease-out;
+  transition: color 0.8s ease-out;
 }
 img {
   max-width: 100%;
@@ -39,7 +39,9 @@ h1 {
 h2 {
   font-family: 'Bilbo Swash Caps', cursive;
   font-size: 6em;
-  margin: 5px 0;
+  /*margin: 5px 0;*/
+  padding: 0.05em 0 0;
+  margin-bottom: 0;
 }
 h3 {
   line-height: 1.5em;
@@ -56,11 +58,11 @@ header {
   /*background: url(../img/texture6.png);*/
   color: #EEE6AB;
   padding: 5em 0;
-  text-align: center;
+  /*text-align: center;*/
 }
 div.preheader {
   padding-top: 1em;
-  text-align: center;
+  /*text-align: center;*/
 }
 .profile-picture {
   width: 125px;
@@ -73,7 +75,8 @@ div.preheader {
   display: inline-block;
 }
 header.interest {
-  padding: 0 0 40px;
+  padding: 0 0 3em;
+  margin-bottom: 3em;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
   -moz-box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
   box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
@@ -82,16 +85,24 @@ header.interest {
 header.interest img {
   /*width: 20%;*/
   max-width: 11em;
-  margin: 60px 0 40px;
+  margin: 3em 0 1.5em;
   display: inline-block;
 }
 
+/*Sections*/
+section.posts p {
+    font-size: 1.5em;
+    padding-bottom: 2em;
+}
+section.posts h3 {
+  margin-top: 0.5em;
+}
 /*Form Elements*/
 
 
 /*Navbar*/
 nav {
-  text-align: center;
+  /*text-align: center;*/
   font-size: 1em;
   /*font-family:*/
 }
@@ -107,7 +118,7 @@ nav li {
 }
 a:hover {
   color: #e03643;
-  transition: color 0.9s ease-out;
+  transition: color 0.8s ease-out;
 }
 
 nav.about {
