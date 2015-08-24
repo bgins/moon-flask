@@ -13,13 +13,19 @@
 					</ul>
 				</nav>
 			</div>
-			<div class="row">
-				<img src="{{ url_for('static', filename='img/{}.jpg'.format(area)) }}" />
-			</div>
-			<div class="row">
-				<h2>{{ area }}</h2>
-				<h4>Interest text for this area will go here once the database is implemented.</h4>
-			</div>
+			{% for interest in interests %}
+				{% if interests[interest]['area'] == area %}
+					{% if interests[interest]['image'] %}
+					<div class="row">
+						<img src="{{ url_for('static', filename='img/{}.jpg'.format(area)) }}" />
+					</div>
+					{% endif %}
+				<div class="row">
+					<h2>{{ interests[interest]['area'] }}</h2>
+					<h4>{{ interests[interest]['about'] }}</h4>
+				</div>
+				{% endif %}
+			{% endfor %}
 		</div>
 	</header>
 {% endblock %}
