@@ -55,14 +55,11 @@ p {
 /*Header*/
 header {
   background: #36393B;
-  /*background: url(../img/texture6.png);*/
   color: #EEE6AB;
   padding: 5em 0;
-  /*text-align: center;*/
 }
 div.preheader {
   padding-top: 1em;
-  /*text-align: center;*/
 }
 .profile-picture {
   width: 125px;
@@ -80,7 +77,6 @@ header.interest {
   -webkit-box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
   -moz-box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
   box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
-  /*background: #eee url(../img/texture5.png);*/
 }
 header.interest img {
   /*width: 20%;*/
@@ -102,7 +98,6 @@ section.posts h3 {
 
 /*Navbar*/
 nav {
-  /*text-align: center;*/
   font-size: 1em;
   /*font-family:*/
 }
