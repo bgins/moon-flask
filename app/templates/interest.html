@@ -17,7 +17,7 @@
 				{% if interests[interest]['area'] == area %}
 					{% if interests[interest]['image'] %}
 					<div class="row">
-						<img src="{{ url_for('static', filename='img/{}.jpg'.format(area)) }}" />
+						<img src="{{ url_for('static', filename='img/{}.jpg'.format(area).replace(' ','')) }}" />
 					</div>
 					{% endif %}
 				<div class="row">
@@ -36,6 +36,11 @@
 	<div class="container">
 		{% for post in posts %}
 			{% if posts[post]['FK_InterestId'] == area %}
+				{% if posts[post]['image'] %}
+				<div class="row">
+					<img src="{{ url_for('static', filename='img/{}.jpg'.format(posts[post]['title']).replace(' ','')) }}" />
+				</div>
+				{% endif %}
 			<div class="row">
 				<h3>{{ posts[post]['title'] }}</h3>
 			</div>

@@ -16,11 +16,11 @@ posts = {1: {'title': 'The Doge', 'text': 'Aliquam ac mauris ante. Suspendisse \
 			cursus erat luctus, aliquam eros. Mauris maximus dolor sed lorem \
 			rhoncus, vel fringilla mi sagittis. Suspendisse faucibus nunc eu \
 			enim pharetra, id lacinia elit venenatis. Integer interdum tellus \
-			aliquam ipsum semper consequat. ', 'FK_InterestId': 'Venice'},
-		 2: {'title': 'Flask', 'text': 'This is built on Flask', 'FK_InterestId': 'Venice'},
-		 3: {'title': 'Blogging', 'text': 'I write blogposts', 'FK_InterestId': 'Constantinople'},
-		 4: {'title': 'Cello', 'text': 'I play the Cello', 'FK_InterestId': 'Greece'},
-		 5: {'title': 'Audio Production', 'text': 'I produce my own music', 'FK_InterestId': 'Greece'}
+			aliquam ipsum semper consequat. ', 'image': False, 'FK_InterestId': 'Venice'},
+		 2: {'title': 'Miracle of the Cross', 'text': 'This is built on Flask', 'image': True, 'FK_InterestId': 'Venice'},
+		 3: {'title': 'Blogging', 'text': 'I write blogposts', 'image': False, 'FK_InterestId': 'Constantinople'},
+		 4: {'title': 'Cello', 'text': 'I play the Cello', 'image': False, 'FK_InterestId': 'Greece'},
+		 5: {'title': 'Audio Production', 'text': 'I produce my own music', 'image': False, 'FK_InterestId': 'Greece'}
 	}
 
 @app.route('/')
