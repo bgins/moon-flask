@@ -25,6 +25,7 @@ posts = {1: {'title': 'The Doge', 'text': 'Aliquam ac mauris ante. Suspendisse \
 
 
 # Models
+# Model names vary from list above. Need to translate to templates.
 # todo: create FK reference between user and post
 #		fix image so it actually deafults to False
 class User(db.Model):
