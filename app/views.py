@@ -25,6 +25,8 @@ posts = {1: {'title': 'The Doge', 'text': 'Aliquam ac mauris ante. Suspendisse \
 
 
 # Models
+# todo: create FK reference between user and post
+#		fix image so it actually deafults to False
 class User(db.Model):
 	__tablename__ = "users"
 	id = db.Column(db.Integer, primary_key=True)
