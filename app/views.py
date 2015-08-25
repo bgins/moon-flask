@@ -1,4 +1,4 @@
-from app import app
+from app import app, db
 from flask import render_template, url_for
 
 interests = {1 : {'area': 'Venice', 'about': 'My original home', 'image': True, 'FKUserId': 1}, 
@@ -23,10 +23,47 @@ posts = {1: {'title': 'The Doge', 'text': 'Aliquam ac mauris ante. Suspendisse \
 		 5: {'title': 'Audio Production', 'text': 'I produce my own music', 'image': False, 'FK_InterestId': 'Greece'}
 	}
 
+
+# Models
+class User(db.Model):
+	__tablename__ = "users"
+	id = db.Column(db.Integer, primary_key=True)
+	username = db.Column(db.String(64), unique=True, index=True)
+	# password
+	pages = db.relationship('Page', backref='user')
+
+	def __repr__(self):
+		return '<User %r>' % self.username
+
+class Page(db.Model):
+	__tablename__ = "pages"
+	id = db.Column(db.Integer, primary_key=True)
+	name = db.Column(db.String(64), unique=True, index=True)
+	description = db.Column(db.String(140))
+	image = db.Column(db.Boolean, default=False)
+	posts = db.relationship('Post', backref='page')
+	user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+	def __repr__(self):
+		return '<Page %r>' % self.name
+
+class Post(db.Model):
+	__tablename__ = "posts"
+	id = db.Column(db.Integer, primary_key=True)
+	title = db.Column(db.String(64), index=True)
+	body = db.Column(db.String(500))	# Long enough? Use db.Text?
+	image = db.Column(db.Boolean, default=False)
+	page_id = db.Column(db.Integer, db.ForeignKey('pages.id'))
+
+	def __repr__(self):
+		return '<Post %r>' % self.title
+
+
 @app.route('/')
 def index():
 	return render_template('index.html', user=user, interests=interests)
 
+# Change interest to page for this route
 @app.route('/interest/<area>')
 def interest(area):
 	return render_template('interest.html', user=user, interests=interests, area=area, posts=posts)
