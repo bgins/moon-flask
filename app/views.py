@@ -27,7 +27,6 @@ posts = {1: {'title': 'The Doge', 'text': 'Aliquam ac mauris ante. Suspendisse \
 # Models
 # Model names vary from list above. Need to translate to templates.
 # todo: create FK reference between user and post
-#		fix image so it actually deafults to False
 class User(db.Model):
 	__tablename__ = "users"
 	id = db.Column(db.Integer, primary_key=True)
@@ -43,7 +42,7 @@ class Page(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(64), unique=True, index=True)
 	description = db.Column(db.String(140))
-	image = db.Column(db.Boolean, default=False)
+	image = db.Column(db.Boolean(), default=False)
 	posts = db.relationship('Post', backref='page')
 	user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
@@ -55,7 +54,7 @@ class Post(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	title = db.Column(db.String(64), index=True)
 	body = db.Column(db.String(500))	# Long enough? Use db.Text?
-	image = db.Column(db.Boolean, default=False)
+	image = db.Column(db.Boolean(), default=False)
 	page_id = db.Column(db.Integer, db.ForeignKey('pages.id'))
 
 	def __repr__(self):
