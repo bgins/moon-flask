@@ -1,26 +1,29 @@
 from app import app, db
 from flask import render_template, url_for
 
-interests = {1 : {'area': 'Venice', 'about': 'My original home', 'image': True, 'FKUserId': 1}, 
-			 2 : {'area': 'Constantinople', 'about': 'A peace time cultural ambassador', 'image': True, 'FKUserId': 1},
-			 3 : {'area': 'Greece', 'about': 'Time in Greece', 'image': True, 'FKUserId': 1}
+interests = {1 : {'area': 'Dragons', 'about': 'St. George in his famed battle \
+				  against the Dragon.', 'image': True, 'FKUserId': 1}, 
+			 2 : {'area': 'Hermits', 'about': 'Early Renaissance monastic life.',
+			  	  'image': True, 'FKUserId': 1},
+			 3 : {'area': 'Polyhedra', 'about': 'My stellated dodecahedron and more.',
+			 	  'image': True, 'FKUserId': 1}
 		}
 
 user = {1: {'name': 'Moon Flask', 'password': 'default'}}
 
 # The FK_InterestIds should be changed to numbers, they match areas for now
-posts = {1: {'title': 'The Doge', 'text': 'Aliquam ac mauris ante. Suspendisse \
+posts = {1: {'title': 'Dragons in our Times.', 'text': 'Aliquam ac mauris ante. Suspendisse \
 			non tempor lectus, a dignissim felis. Nunc posuere, purus et \
 			feugiat accumsan, lorem leo auctor turpis, quis vestibulum metus \
 			magna id neque. Ut ac blandit odio. Praesent at elit vestibulum, \
 			cursus erat luctus, aliquam eros. Mauris maximus dolor sed lorem \
 			rhoncus, vel fringilla mi sagittis. Suspendisse faucibus nunc eu \
 			enim pharetra, id lacinia elit venenatis. Integer interdum tellus \
-			aliquam ipsum semper consequat. ', 'image': False, 'FK_InterestId': 'Venice'},
-		 2: {'title': 'Miracle of the Cross', 'text': 'This is built on Flask', 'image': True, 'FK_InterestId': 'Venice'},
-		 3: {'title': 'Blogging', 'text': 'I write blogposts', 'image': False, 'FK_InterestId': 'Constantinople'},
-		 4: {'title': 'Cello', 'text': 'I play the Cello', 'image': False, 'FK_InterestId': 'Greece'},
-		 5: {'title': 'Audio Production', 'text': 'I produce my own music', 'image': False, 'FK_InterestId': 'Greece'}
+			aliquam ipsum semper consequat. ', 'image': False, 'FK_InterestId': 'Dragons'},
+		 2: {'title': 'St. George and the Dragon', 'text': 'Brave St.George.', 'image': True, 'FK_InterestId': 'Dragons'},
+		 3: {'title': 'Episodes of the Hermit Life', 'text': 'Hermits and their role in monsatic life.', 'image': True, 'FK_InterestId': 'Hermits'},
+		 4: {'title': 'Perspective Study of Mazzocchio', 'text': 'My famous sketch.', 'image': True, 'FK_InterestId': 'Polyhedra'},
+		 5: {'title': 'More Shapes', 'text': 'Undiscovered polyhedra.', 'image': False, 'FK_InterestId': 'Polyhedra'}
 	}
 
 
