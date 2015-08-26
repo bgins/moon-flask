@@ -38,6 +38,7 @@ class User(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(64), unique=True, index=True)
 	# password
+	about = db.Column(db.String(140))
 	pages = db.relationship('Page', backref='author')
 	posts = db.relationship('Post', backref='author')
 
