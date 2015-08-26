@@ -32,7 +32,8 @@ class User(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(64), unique=True, index=True)
 	# password
-	pages = db.relationship('Page', backref='user')
+	pages = db.relationship('Page', backref='author')
+	posts = db.relationship('Post', backref='author')
 
 	def __repr__(self):
 		return '<User %r>' % self.username
@@ -55,6 +56,7 @@ class Post(db.Model):
 	title = db.Column(db.String(64), index=True)
 	body = db.Column(db.String(500))	# Long enough? Use db.Text?
 	image = db.Column(db.Boolean(), default=False)
+	user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 	page_id = db.Column(db.Integer, db.ForeignKey('pages.id'))
 
 	def __repr__(self):
