@@ -38,7 +38,7 @@ class User(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(64), unique=True, index=True)
 	# password
-	about = db.Column(db.String(500))
+	about = db.Column(db.Text)
 	pages = db.relationship('Page', backref='author')
 	posts = db.relationship('Post', backref='author')
 
@@ -49,8 +49,8 @@ class Page(db.Model):
 	__tablename__ = "pages"
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(64), unique=True, index=True)
-	description = db.Column(db.String(140))
-	image = db.Column(db.Boolean(), default=False)
+	description = db.Column(db.Text)
+	image = db.Column(db.Boolean, default=False)
 	posts = db.relationship('Post', backref='page')
 	user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
@@ -61,8 +61,8 @@ class Post(db.Model):
 	__tablename__ = "posts"
 	id = db.Column(db.Integer, primary_key=True)
 	title = db.Column(db.String(64), index=True)
-	body = db.Column(db.String(500))	# Long enough? Use db.Text?
-	image = db.Column(db.Boolean(), default=False)
+	body = db.Column(db.Text)	# Long enough? Use db.Text?
+	image = db.Column(db.Boolean, default=False)
 	user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 	page_id = db.Column(db.Integer, db.ForeignKey('pages.id'))
 
