@@ -24,7 +24,7 @@
 		<nav class="about">
 			<ul>
 			{% for page in pages %}
-				<li><a href="{{ url_for('interest', area=page.name) }}" class="about">{{ page.name }}</a></li>
+				<li><a href="{{ url_for('page', name=page.name) }}" class="about">{{ page.name }}</a></li>
 			{% endfor %}
 			</ul>
 		</nav>

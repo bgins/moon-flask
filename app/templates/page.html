@@ -8,16 +8,16 @@
 					<ul class="interest">
 						<li><a href="{{ url_for('index') }}" class ="interest">About</a></li>
 					{% for interest in interests %}
-						<li><a href="{{ url_for('interest', area=interests[interest]['area']) }}" class ="interest">{{ interests[interest]['area'] }}</a></li>
+						<li><a href="{{ url_for('page', name=interests[interest]['area']) }}" class ="interest">{{ interests[interest]['area'] }}</a></li>
 					{% endfor %}
 					</ul>
 				</nav>
 			</div>
 			{% for interest in interests %}
-				{% if interests[interest]['area'] == area %}
+				{% if interests[interest]['area'] == name %}
 					{% if interests[interest]['image'] %}
 					<div class="row">
-						<img src="{{ url_for('static', filename='img/{}.jpg'.format(area).replace(' ','')) }}" />
+						<img src="{{ url_for('static', filename='img/{}.jpg'.format(name).replace(' ','')) }}" />
 					</div>
 					{% endif %}
 				<div class="row">
@@ -35,7 +35,7 @@
 <section class="posts">
 	<div class="container">
 		{% for post in posts %}
-			{% if posts[post]['FK_InterestId'] == area %}
+			{% if posts[post]['FK_InterestId'] == name %}
 			<div class="row">
 				<h3>{{ posts[post]['title'] }}</h3>
 			</div>

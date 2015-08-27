@@ -77,6 +77,6 @@ def index():
 	return render_template('index.html', user=user, pages=pages)
 
 # Change interest to page for this route
-@app.route('/interest/<area>')
-def interest(area):
-	return render_template('interest.html', users=users, interests=interests, area=area, posts=posts)
+@app.route('/page/<name>')
+def page(name):
+	return render_template('page.html', users=users, interests=interests, name=name, posts=posts)
