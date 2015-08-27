@@ -3,14 +3,14 @@
 {% block header %}
 	<div class="container">
 		<div class="preheader row">
-			<a href="#"><img class="profile-picture" src="{{ url_for('static', filename='img/{}.jpg'.format(user[1]['name']).replace(' ','')) }}" /></a>
+			<a href="#"><img class="profile-picture" src="{{ url_for('static', filename='img/{}.jpg'.format(user.username).replace(' ','')) }}" /></a>
 		</div>
 	</div>
 	<header>
 		<div class="container">
 			<div class="row">
-				<h1>{{ user[1]['name'] }}</h1>
-				<h3>{{ user[1]['about'] }}</h3>
+				<h1>{{ user.username }}</h1>
+				<h3>{{ user.about }}</h3>
 			</div>
 		</div>
 	</header>
