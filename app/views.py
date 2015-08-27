@@ -79,4 +79,5 @@ def index():
 # Change interest to page for this route
 @app.route('/page/<name>')
 def page(name):
-	return render_template('page.html', users=users, interests=interests, name=name, posts=posts)
+	pages = Page.query.all()
+	return render_template('page.html', name=name, pages=pages, posts=posts)

@@ -7,22 +7,22 @@
 				<nav class="interest twelve columns">
 					<ul class="interest">
 						<li><a href="{{ url_for('index') }}" class ="interest">About</a></li>
-					{% for interest in interests %}
-						<li><a href="{{ url_for('page', name=interests[interest]['area']) }}" class ="interest">{{ interests[interest]['area'] }}</a></li>
+					{% for page in pages %}
+						<li><a href="{{ url_for('page', name=page.name) }}" class ="interest">{{ page.name }}</a></li>
 					{% endfor %}
 					</ul>
 				</nav>
 			</div>
-			{% for interest in interests %}
-				{% if interests[interest]['area'] == name %}
-					{% if interests[interest]['image'] %}
+			{% for page in pages %}
+				{% if page.name == name %}
+					{% if page.image %}
 					<div class="row">
-						<img src="{{ url_for('static', filename='img/{}.jpg'.format(name).replace(' ','')) }}" />
+						<img src="{{ url_for('static', filename='img/{}.jpg'.format(page.name).replace(' ','')) }}" />
 					</div>
 					{% endif %}
 				<div class="row">
-					<h2>{{ interests[interest]['area'] }}</h2>
-					<h4>{{ interests[interest]['about'] }}</h4>
+					<h2>{{ page.name }}</h2>
+					<h4>{{ page.description }}</h4>
 				</div>
 				{% endif %}
 			{% endfor %}
