@@ -62,3 +62,6 @@ include/
 
 # Design assets
 design/
+
+# Local db
+data.sqlite

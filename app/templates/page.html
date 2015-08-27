@@ -7,22 +7,22 @@
 				<nav class="interest twelve columns">
 					<ul class="interest">
 						<li><a href="{{ url_for('index') }}" class ="interest">About</a></li>
-					{% for interest in interests %}
-						<li><a href="{{ url_for('interest', area=interests[interest]['area']) }}" class ="interest">{{ interests[interest]['area'] }}</a></li>
+					{% for page in pages %}
+						<li><a href="{{ url_for('page', name=page.name) }}" class ="interest">{{ page.name }}</a></li>
 					{% endfor %}
 					</ul>
 				</nav>
 			</div>
-			{% for interest in interests %}
-				{% if interests[interest]['area'] == area %}
-					{% if interests[interest]['image'] %}
+			{% for page in pages %}
+				{% if page.name == name %}
+					{% if page.image %}
 					<div class="row">
-						<img src="{{ url_for('static', filename='img/{}.jpg'.format(area).replace(' ','')) }}" />
+						<img src="{{ url_for('static', filename='img/{}.jpg'.format(page.name).replace(' ','')) }}" />
 					</div>
 					{% endif %}
 				<div class="row">
-					<h2>{{ interests[interest]['area'] }}</h2>
-					<h4>{{ interests[interest]['about'] }}</h4>
+					<h2>{{ page.name }}</h2>
+					<h4>{{ page.description }}</h4>
 				</div>
 				{% endif %}
 			{% endfor %}
@@ -35,16 +35,16 @@
 <section class="posts">
 	<div class="container">
 		{% for post in posts %}
-			{% if posts[post]['FK_InterestId'] == area %}
+			{% if post.page.name == name %}
 			<div class="row">
-				<h3>{{ posts[post]['title'] }}</h3>
+				<h3>{{ post.title }}</h3>
 			</div>
 			<div class="row boxy">
-				<p>{{ posts[post]['text'] }}</p>
+				<p>{{ post.body }}</p>
 			</div>
-				{% if posts[post]['image'] %}
+				{% if post.image %}
 				<div class="row">
-					<img src="{{ url_for('static', filename='img/{}.jpg'.format(posts[post]['title']).replace(' ','')) }}" />
+					<img src="{{ url_for('static', filename='img/{}.jpg'.format(post.title).replace(' ','')) }}" />
 				</div>
 				{% endif %}
 			{% endif %}

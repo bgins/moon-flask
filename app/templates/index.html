@@ -3,14 +3,14 @@
 {% block header %}
 	<div class="container">
 		<div class="preheader row">
-			<a href="#"><img class="profile-picture" src="{{ url_for('static', filename='img/{}.jpg'.format(user[1]['name']).replace(' ','')) }}" /></a>
+			<a href="#"><img class="profile-picture" src="{{ url_for('static', filename='img/{}.jpg'.format(user.username).replace(' ','')) }}" /></a>
 		</div>
 	</div>
 	<header>
 		<div class="container">
 			<div class="row">
-				<h1>{{ user[1]['name'] }}</h1>
-				<h3>Moon Flask is a simple content management system built on Flask. You can use it to build a portfolio or personal website. Paolo Uccello serves as the user for the sample app. Take a look at his interests below.</h3>
+				<h1>{{ user.username }}</h1>
+				<h3>{{ user.about }}</h3>
 			</div>
 		</div>
 	</header>
@@ -23,8 +23,8 @@
 	<section class="row">
 		<nav class="about">
 			<ul>
-			{% for interest in interests %}
-				<li><a href="{{ url_for('interest', area=interests[interest]['area']) }}" class ="about">{{ interests[interest]['area'] }}</a></li>
+			{% for page in pages %}
+				<li><a href="{{ url_for('page', name=page.name) }}" class="about">{{ page.name }}</a></li>
 			{% endfor %}
 			</ul>
 		</nav>
