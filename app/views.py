@@ -9,10 +9,10 @@ interests = {1 : {'area': 'Dragons', 'about': 'St. George in his famed battle \
 			 	  'image': True, 'FKUserId': 1}
 		}
 
-# user = {1: {'name': 'Moon Flask', 'password': 'default', 'about': 'Moon Flask is \
-# 			a simple content management system built on Flask. You can use it to \
-# 			build a portfolio or personal website. Paolo Uccello serves as the \
-# 			user for the sample app. Take a look at his interests below.'}}
+users = {1: {'name': 'Moon Flask', 'password': 'default', 'about': 'Moon Flask is \
+			a simple content management system built on Flask. You can use it to \
+			build a portfolio or personal website. Paolo Uccello serves as the \
+			user for the sample app. Take a look at his interests below.'}}
 
 # The FK_InterestIds should be changed to numbers, they match areas for now
 posts = {1: {'title': 'Dragons in our Times.', 'text': 'Aliquam ac mauris ante. Suspendisse \
@@ -79,4 +79,4 @@ def index():
 # Change interest to page for this route
 @app.route('/interest/<area>')
 def interest(area):
-	return render_template('interest.html', user=user, interests=interests, area=area, posts=posts)
+	return render_template('interest.html', users=users, interests=interests, area=area, posts=posts)
