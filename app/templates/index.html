@@ -23,8 +23,8 @@
 	<section class="row">
 		<nav class="about">
 			<ul>
-			{% for interest in interests %}
-				<li><a href="{{ url_for('interest', area=interests[interest]['area']) }}" class ="about">{{ interests[interest]['area'] }}</a></li>
+			{% for page in pages %}
+				<li><a href="{{ url_for('interest', area=page.name) }}" class="about">{{ page.name }}</a></li>
 			{% endfor %}
 			</ul>
 		</nav>

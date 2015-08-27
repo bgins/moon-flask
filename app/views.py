@@ -73,7 +73,8 @@ class Post(db.Model):
 @app.route('/')
 def index():
 	user = User.query.first()
-	return render_template('index.html', user=user, interests=interests)
+	pages = Page.query.all()
+	return render_template('index.html', user=user, pages=pages)
 
 # Change interest to page for this route
 @app.route('/interest/<area>')
