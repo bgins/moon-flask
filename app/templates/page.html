@@ -35,16 +35,16 @@
 <section class="posts">
 	<div class="container">
 		{% for post in posts %}
-			{% if posts[post]['FK_InterestId'] == name %}
+			{% if post.page.name == name %}
 			<div class="row">
-				<h3>{{ posts[post]['title'] }}</h3>
+				<h3>{{ post.title }}</h3>
 			</div>
 			<div class="row boxy">
-				<p>{{ posts[post]['text'] }}</p>
+				<p>{{ post.body }}</p>
 			</div>
-				{% if posts[post]['image'] %}
+				{% if post.image %}
 				<div class="row">
-					<img src="{{ url_for('static', filename='img/{}.jpg'.format(posts[post]['title']).replace(' ','')) }}" />
+					<img src="{{ url_for('static', filename='img/{}.jpg'.format(post.title).replace(' ','')) }}" />
 				</div>
 				{% endif %}
 			{% endif %}
