@@ -71,14 +71,14 @@ div.preheader {
   box-shadow: 0px 3px 0px 15px #EEE6AB;
   display: inline-block;
 }
-header.interest {
+header.page {
   padding: 0 0 3em;
   margin-bottom: 3em;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
   -moz-box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
   box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
 }
-header.interest img {
+header.page img {
   /*width: 20%;*/
   max-width: 11em;
   margin: 3em 0 1.5em;
@@ -127,18 +127,18 @@ nav.about li:nth-of-type(n+2) {
   border-left: 1px solid #696758;
 }
 
-nav.interest {
+nav.page {
   font-size: 1.3em;
   line-height: 1.5em;
   border-bottom: 1px solid #696758;
 }
-nav ul.interest {
+nav ul.page {
   margin: 0;
 }
-nav.interest a {
+nav.page a {
   color: #EEE6AB;
 }
-nav.interest a:hover {
+nav.page a:hover {
   color: #e03643;
   transition: color 0.9s ease-out;
 }

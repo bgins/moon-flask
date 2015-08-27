@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 {% block header %}
-	<header class="interest">
+	<header class="page">
 		<div class="container">	
 			<div class="row">
-				<nav class="interest twelve columns">
-					<ul class="interest">
-						<li><a href="{{ url_for('index') }}" class ="interest">About</a></li>
+				<nav class="page twelve columns">
+					<ul class="page">
+						<li><a href="{{ url_for('index') }}" class ="page">About</a></li>
 					{% for page in pages %}
-						<li><a href="{{ url_for('page', name=page.name) }}" class ="interest">{{ page.name }}</a></li>
+						<li><a href="{{ url_for('page', name=page.name) }}" class ="page">{{ page.name }}</a></li>
 					{% endfor %}
 					</ul>
 				</nav>
@@ -39,7 +39,7 @@
 			<div class="row">
 				<h3>{{ post.title }}</h3>
 			</div>
-			<div class="row boxy">
+			<div class="row">
 				<p>{{ post.body }}</p>
 			</div>
 				{% if post.image %}
