@@ -148,3 +148,11 @@ nav.page a:hover {
 
 
 /*Footer*/
+.footer {
+  display:flex; 
+  flex-wrap: nowrap; 
+  align-content: center;
+}
+.footer span {
+  flex-grow: 1;
+}
