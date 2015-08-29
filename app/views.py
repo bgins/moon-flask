@@ -33,6 +33,7 @@ class Post(db.Model):
 	title = db.Column(db.String(64), index=True)
 	body = db.Column(db.Text)
 	image = db.Column(db.Boolean, default=False)
+	embed = db.Column(db.Text)
 	user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 	page_id = db.Column(db.Integer, db.ForeignKey('pages.id'))
 

@@ -46,7 +46,9 @@
 				<div class="row">
 					<img src="{{ url_for('static', filename='img/{}.jpg'.format(post.title).replace(' ','')) }}" />
 				</div>
-				{% endif %}
+				{% elif post.embed %}
+					{{ post.embed|safe }}
+				{% endif %}				
 			{% endif %}
 		{% endfor %}
 	</div>
