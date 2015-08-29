@@ -56,9 +56,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="footer six offset-by-three columns">
-				<a href="#"><span class="fa fa-deviantart fa-lg"></span></a>
-				<a href="#"><span class="fa fa-twitter fa-lg"></span></a>
-				<a href="#"><span class="fa fa-github-alt fa-lg"></span></a>
+				{% for icon in social_icons %}
+				<a href="{{ ''.join(['https://', social_icons[icon]['href']]) }}"><span class="{{ social_icons[icon]['value'] }}"></span></a>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

@@ -39,6 +39,7 @@ class Post(db.Model):
 		return '<Post %r>' % self.title
 
 
+# Views
 @app.route('/')
 def index():
 	user = User.query.first()
@@ -50,4 +51,7 @@ def index():
 def page(name):
 	pages = Page.query.all()
 	posts = Post.query.all()
-	return render_template('page.html', name=name, pages=pages, posts=posts)
+	social_icons = {'deviant_art': {'value': 'fa fa-deviantart fa-lg', 'href': 'deviantart.com' },
+					'twitter': {'value': 'fa fa fa-twitter fa-lg', 'href': 'twitter.com'},
+					'github': {'value': 'fa fa-github-alt fa-lg', 'href': 'github.com'}}
+	return render_template('page.html', name=name, pages=pages, posts=posts, social_icons=social_icons)
