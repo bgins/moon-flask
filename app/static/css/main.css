@@ -1,15 +1,10 @@
-/* Color palette
-Backgrounds: #fff, #54B2AE
-Accents: #ABFFFB
-Text:
-Link: #C75418, #936FB2, #5487B2*/
-
 
 /*General*/
 body, input, button, textarea {
   /*Global font*/
 }
 body {
+  font-family: 'Asul', sans-serif;
   text-align: center;
   margin: 0;
   color: #232526;
@@ -20,6 +15,10 @@ a {
   display: block;
   color: #36393B;
   text-decoration: none;
+  transition: color 0.8s ease-out;
+}
+a:hover {
+  color: #ba2d38;
   transition: color 0.8s ease-out;
 }
 img {
@@ -44,9 +43,11 @@ h2 {
   margin-bottom: 0;
 }
 h3 {
+  letter-spacing: 0.001em;
   line-height: 1.5em;
 }
 p {
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /*font-size:*/
 }
 
@@ -88,10 +89,14 @@ header.page img {
 /*Sections*/
 section.posts p {
     font-size: 1.5em;
-    padding-bottom: 2em;
+    text-align: left;
+    /*padding-bottom: 1em;*/
 }
 section.posts h3 {
   margin-top: 0.5em;
+}
+section.posts img {
+  margin-bottom: 1em;
 }
 /*Form Elements*/
 
@@ -110,10 +115,6 @@ nav li {
   flex-grow: 1;
   margin-bottom: 0;
   line-height: 2em;
-}
-a:hover {
-  color: #e03643;
-  transition: color 0.8s ease-out;
 }
 
 nav.about {
@@ -139,8 +140,12 @@ nav.page a {
   color: #EEE6AB;
 }
 nav.page a:hover {
-  color: #e03643;
+  color: #fa3c4b;
   transition: color 0.9s ease-out;
+}
+nav.page a:hover {
+  color: #e03643;
+  transition: color 0.8s ease-out;
 }
 
 
@@ -148,11 +153,16 @@ nav.page a:hover {
 
 
 /*Footer*/
-.footer {
+footer {
+  font-size: 1.2em;
+  color: #45484B;
+  margin: 1em 0 2em;
+}
+div.footer {
   display:flex; 
   flex-wrap: nowrap; 
   align-content: center;
 }
-.footer span {
+footer a {
   flex-grow: 1;
 }
