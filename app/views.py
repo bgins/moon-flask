@@ -10,6 +10,7 @@ class User(db.Model):
 	about = db.Column(db.Text)
 	pages = db.relationship('Page', backref='author')
 	posts = db.relationship('Post', backref='author')
+	social_icons = db.relationship('SocialIcon', backref='user')
 
 	def __repr__(self):
 		return '<User %r>' % self.username
@@ -37,6 +38,17 @@ class Post(db.Model):
 
 	def __repr__(self):
 		return '<Post %r>' % self.title
+
+# The css_value references the font-awesome value for the icon
+class SocialIcon(db.Model):
+	__tablename__ = "social_icons"
+	id = db.Column(db.Integer, primary_key=True)
+	href = db.Column(db.String(140))
+	css_value = db.Column(db.String(32))
+	user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+	def __repr__(self):
+		return '<SocialIcon %r>' % self.href
 
 
 # Views
