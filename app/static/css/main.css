@@ -33,12 +33,17 @@ h1, h2, h3, h4 {
 h1 {
   font-family: 'Bilbo Swash Caps', cursive;
   font-size: 6em;
+  margin-top: 0.5em;
   padding: 0.3em;
+}
+@media (min-width: 400px) {
+  h1 {
+    margin-top: 0;
+  }
 }
 h2 {
   font-family: 'Bilbo Swash Caps', cursive;
   font-size: 6em;
-  /*margin: 5px 0;*/
   padding: 0.05em 0 0;
   margin-bottom: 0;
 }
@@ -57,7 +62,12 @@ p {
 header {
   background: #36393B;
   color: #EEE6AB;
-  padding: 5em 0;
+  padding: 1em 0;
+}
+@media (min-width: 400px) {
+  header {
+    padding: 5em 0;
+  }
 }
 div.preheader {
   padding-top: 1em;
@@ -73,11 +83,17 @@ div.preheader {
   display: inline-block;
 }
 header.page {
-  padding: 0 0 3em;
-  margin-bottom: 3em;
+  padding-top: 0;
+  margin-bottom: 2em;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
   -moz-box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
   box-shadow: 0px 2px 2px 0px rgba(69,72,75,1);
+}
+@media (min-width: 400px) {
+  header.page {
+    padding-bottom: 3em;
+    margin-bottom: 3em; 
+  }
 }
 header.page img {
   /*width: 20%;*/
@@ -89,8 +105,11 @@ header.page img {
 /*Sections*/
 section.posts p {
     font-size: 1.5em;
+}
+@media (min-width: 400px) {
+  section.posts p {
     text-align: left;
-    /*padding-bottom: 1em;*/
+  }
 }
 section.posts h3 {
   margin-top: 0.5em;
@@ -98,17 +117,18 @@ section.posts h3 {
 section.posts img {
   margin-bottom: 1em;
 }
+
 /*Form Elements*/
 
 
-/*Navbar*/
+/*Navigation*/
 nav {
   font-size: 1em;
   /*font-family:*/
 }
 nav ul {
-  display:flex; 
-  flex-wrap: nowrap; 
+  display: flex; 
+  flex-wrap: wrap;
   align-content: center;
 }
 nav li {
@@ -119,13 +139,29 @@ nav li {
 
 nav.about {
   font-size: 2em;
-  padding-top: 2em;
+  padding-top: 0.5em;
 }
 nav.about li {
-  line-height: 1em;
+  line-height: 2em;
 }
-nav.about li:nth-of-type(n+2) {
-  border-left: 1px solid #696758;
+/*Force the navigation items to stack. Removed for larger devices below.*/
+nav.about li:nth-child(2n) {
+    flex-basis: 100%;
+}
+@media (min-width: 400px) {
+  nav.about {
+    padding-top: 2em;
+  }
+  nav.about li {
+    padding-bottom: 0.5em;
+    line-height: 1em;
+  }
+  nav.about li:nth-child(2n) {
+    flex-basis: auto;
+  }
+  nav.about li:nth-of-type(n+2) {
+    border-left: 1px solid #696758;
+  }
 }
 
 nav.page {
@@ -136,16 +172,16 @@ nav.page {
 nav ul.page {
   margin: 0;
 }
+/*Spacer between flexbox items*/
+nav.page li {
+  border-left: 15px solid transparent;
+}
 nav.page a {
   color: #EEE6AB;
 }
 nav.page a:hover {
   color: #fa3c4b;
   transition: color 0.9s ease-out;
-}
-nav.page a:hover {
-  color: #e03643;
-  transition: color 0.8s ease-out;
 }
 
 
