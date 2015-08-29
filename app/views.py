@@ -63,7 +63,5 @@ def index():
 def page(name):
 	pages = Page.query.all()
 	posts = Post.query.all()
-	social_icons = {'deviant_art': {'value': 'fa fa-deviantart fa-lg', 'href': 'deviantart.com' },
-					'twitter': {'value': 'fa fa fa-twitter fa-lg', 'href': 'twitter.com'},
-					'github': {'value': 'fa fa-github-alt fa-lg', 'href': 'github.com'}}
+	social_icons = SocialIcon.query.all()
 	return render_template('page.html', name=name, pages=pages, posts=posts, social_icons=social_icons)

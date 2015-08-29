@@ -31,6 +31,12 @@ sketch_post = views.Post(title="Perspective Study of Mazzocchio", body="Integer 
 shapes_post = views.Post(title="More Shapes", body="Mauris metus nisl, lobortis quis ex sed, dignissim eleifend libero. In ullamcorper id libero vel fermentum. Sed hendrerit nisl at dolor laoreet, quis mollis quam dictum. Etiam nec ipsum neque. Maecenas posuere lectus nec bibendum ultrices. Cras vehicula pellentesque purus vitae consequat. Duis ut mi blandit, mollis eros a, molestie lectus. Cras auctor felis ipsum, accumsan efficitur tortor semper sit amet. Nullam nec ex at odio molestie ullamcorper fringilla eu enim. Curabitur sollicitudin a lacus vel interdum. Nulla facilisi. Sed eleifend pulvinar leo, et mollis risus mollis in.", author=user_moon, page=polyhedra_page)
 
 
+# social icons
+deviant_art_icon = views.SocialIcon(href="deviantart.com", css_value="fa fa-deviantart fa-lg", user=user_moon)
+twitter_icon = views.SocialIcon(href="twitter.com", css_value="fa fa-twitter fa-lg", user=user_moon)
+github_icon = views.SocialIcon(href="github.com", css_value="fa fa-github-alt fa-lg", user=user_moon)
+
+
 # add and commit
 db.session.add(user_moon)
 db.session.add(dragons_page)
@@ -41,5 +47,8 @@ db.session.add(stgeorge_post)
 db.session.add(hermits_post)
 db.session.add(sketch_post)
 db.session.add(shapes_post)
+db.session.add(deviant_art_icon)
+db.session.add(twitter_icon)
+db.session.add(github_icon)
 
 db.session.commit()
