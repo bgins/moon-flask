@@ -29,6 +29,7 @@
 		<div class="container">
 		<form method="POST">
 			<div class="row">
+			{{ form.hidden_tag() }}
 			{{ form.name.label }}{{ form.name() }}
 			{{ form.email.label }}{{ form.email() }}
 			{{ form.message.label }}{{ form.message() }}
@@ -37,7 +38,14 @@
 			{{ form.submit() }}
 			</div>
 		</form>
-
+		<p>Your name is {{ name }}</p>
+		<p>Your name is {{ email }}</p>
+		<p>Your name is {{ message }}</p>
+		<p>
+			{% if form.errors %}
+    			{{ form.errors }}
+			{% endif %}
+		</p>
 		</div>
 	</section>
 
