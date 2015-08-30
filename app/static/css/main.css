@@ -11,6 +11,10 @@ body {
   background: #EEE6AB;
   position: relative;
 }
+body.contact {
+  background: #36393B;
+  color: #EEE6AB;
+}
 a {
   display: block;
   color: #36393B;
@@ -69,6 +73,7 @@ header {
     padding: 5em 0;
   }
 }
+
 div.preheader {
   padding-top: 1em;
 }
@@ -82,6 +87,7 @@ div.preheader {
   box-shadow: 0px 3px 0px 15px #EEE6AB;
   display: inline-block;
 }
+
 header.page {
   padding-top: 0;
   margin-bottom: 2em;
@@ -100,6 +106,10 @@ header.page img {
   max-width: 11em;
   margin: 3em 0 1.5em;
   display: inline-block;
+}
+
+header.contact h2 {
+  margin-top: 0.5em;
 }
 
 /*Sections*/
@@ -153,7 +163,7 @@ nav.about li:nth-child(2n) {
     padding-top: 2em;
   }
   nav.about li {
-    padding-bottom: 0.5em;
+    /*padding-bottom: 0.5em;*/
     line-height: 1em;
   }
   nav.about li:nth-child(2n) {

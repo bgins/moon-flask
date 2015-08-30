@@ -66,3 +66,9 @@ def page(name):
 	posts = Post.query.all()
 	social_icons = SocialIcon.query.all()
 	return render_template('page.html', name=name, pages=pages, posts=posts, social_icons=social_icons)
+
+
+@app.route('/contact')
+def contact():
+	pages = Page.query.all()
+	return render_template('contact.html', pages=pages)

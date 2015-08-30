@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block header %}
+<body class="contact">
+	<header class="contact page">
+		<div class="container">	
+			<div class="row">
+				<nav class="page twelve columns">
+					<ul class="page">
+						<li><a href="{{ url_for('index') }}" class ="page">About</a></li>
+					{% for page in pages %}
+						<li><a href="{{ url_for('page', name=page.name) }}" class ="page">{{ page.name }}</a></li>
+					{% endfor %}
+						<li><a href="{{ url_for('contact') }}" class ="page">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="row">
+					<h2>Contact</h2>
+					<h4>I would love to hear from you! Fill out the form below and I will be in touch.</h4>
+			</div>
+		</div>
+	</header>
+{% endblock %}
+
+{% block content %}
+	<section class="contact">
+		<div class="container">
+
+
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="footer six offset-by-three columns">
+					{% for icon in social_icons %}
+					<a href="{{ ''.join(['https://', icon.href]) }}"><span class="{{ icon.css_value }}"></span></a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+{% endblock %}

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block header %}
+<body>
 	<header class="page">
 		<div class="container">	
 			<div class="row">
@@ -10,6 +11,7 @@
 					{% for page in pages %}
 						<li><a href="{{ url_for('page', name=page.name) }}" class ="page">{{ page.name }}</a></li>
 					{% endfor %}
+						<li><a href="{{ url_for('contact') }}" class ="page">Contact</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -31,38 +33,39 @@
 {% endblock %}
 
 {% block content %}
-<!-- Consider adding conditional for title and text, this would allow more modularity in make up of page. -->
-<section class="posts">
-	<div class="container">
-		{% for post in posts %}
-			{% if post.page.name == name %}
-			<div class="row">
-				<h3>{{ post.title }}</h3>
-			</div>
-			<div class="row">
-				<p>{{ post.body }}</p>
-			</div>
-				{% if post.image %}
+	<!-- Consider adding conditional for title and text, this would allow more modularity in make up of page. -->
+	<section class="posts">
+		<div class="container">
+			{% for post in posts %}
+				{% if post.page.name == name %}
 				<div class="row">
-					<img src="{{ url_for('static', filename='img/{}.jpg'.format(post.title).replace(' ','')) }}" />
+					<h3>{{ post.title }}</h3>
 				</div>
-				{% elif post.embed %}
-					{{ post.embed|safe }}
-				{% endif %}				
-			{% endif %}
-		{% endfor %}
-	</div>
-</section>
+				<div class="row">
+					<p>{{ post.body }}</p>
+				</div>
+					{% if post.image %}
+					<div class="row">
+						<img src="{{ url_for('static', filename='img/{}.jpg'.format(post.title).replace(' ','')) }}" />
+					</div>
+					{% elif post.embed %}
+						{{ post.embed|safe }}
+					{% endif %}				
+				{% endif %}
+			{% endfor %}
+		</div>
+	</section>
 
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="footer six offset-by-three columns">
-				{% for icon in social_icons %}
-				<a href="{{ ''.join(['https://', icon.href]) }}"><span class="{{ icon.css_value }}"></span></a>
-				{% endfor %}
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="footer six offset-by-three columns">
+					{% for icon in social_icons %}
+					<a href="{{ ''.join(['https://', icon.href]) }}"><span class="{{ icon.css_value }}"></span></a>
+					{% endfor %}
+				</div>
 			</div>
 		</div>
-	</div>
-</footer>
+	</footer>
+</body>
 {% endblock %}
