@@ -27,6 +27,17 @@
 {% block content %}
 	<section class="contact">
 		<div class="container">
+		<span class="error">
+		{% if form.errors %}
+    			<!-- {# form.errors #} -->
+    			Please enter your name and a valid email.
+		{% endif %}
+		</span>
+		<span class="submission">
+		{% for message in get_flashed_messages() %}
+				{{ message }}
+		{% endfor %}
+		</span>
 		<form method="POST">
 			<div class="row">
 			{{ form.hidden_tag() }}
@@ -38,14 +49,6 @@
 			{{ form.submit() }}
 			</div>
 		</form>
-		<p>Your name is {{ name }}</p>
-		<p>Your name is {{ email }}</p>
-		<p>Your name is {{ message }}</p>
-		<p>
-			{% if form.errors %}
-    			{{ form.errors }}
-			{% endif %}
-		</p>
 		</div>
 	</section>
 

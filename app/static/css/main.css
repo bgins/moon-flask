@@ -110,14 +110,14 @@ header.page img {
 }
 
 header.contact {
-  padding: 0 0 1.5em;
+  padding: 0 0 0.5em;
 }
 header.contact h2 {
   margin-top: 0.2em;
 }
 @media (min-width: 400px) {
   header.contact {
-    padding: 0 0 2.5em;
+    padding: 0 0 1.5em;
   }
   header.contact h2 {
     margin-top: 0.4em;
@@ -141,14 +141,42 @@ section.posts h3 {
 section.posts img {
   margin-bottom: 1em;
 }
+
+section.contact span {
+  font-size: 1.2em;
+}
+section.contact span.error {
+  color: #fa3c4b;
+}
+section.contact span.submission {
+  color: #b5cd56;
+}
 section.contact div.submit {
   margin-top: 0.5em;
 }
 
 
 /*Form Elements*/
+form {
+  padding-top: 1em;
+}
 label {
   font-size: 1.2em;
+}
+input[type="text"],
+textarea {
+  background-color: #fffdf0;
+}
+input[type="submit"] {
+  font-family: 'Asul', sans-serif;
+  color: #c4be8d;
+  border: 1px solid #c4be8d;
+  transition: color 0.3s ease-out, border 0.3s ease-out;
+}
+input[type="submit"]:hover {
+  color: #f7efb2;
+  border: 1px solid #737053;
+  transition: color 0.3s ease-out, border 0.3s ease-out;
 }
 
 

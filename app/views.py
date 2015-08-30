@@ -1,5 +1,5 @@
 from app import app, db
-from flask import render_template, url_for, session, redirect
+from flask import render_template, url_for, session, redirect, flash
 
 from app.models import User, Page, Post, SocialIcon
 from app.forms import ContactForm
@@ -32,14 +32,15 @@ def contact():
 	social_icons = SocialIcon.query.all()
 	form = ContactForm()
 	if form.validate_on_submit():
-		session['name'] = form.name.data
-		session['email'] = form.email.data
-		session['message'] = form.message.data
+		# session['name'] = form.name.data
+		# session['email'] = form.email.data
+		# session['message'] = form.message.data
+		flash('Your message has been sent!')
 		return redirect(url_for('contact'))
 	return render_template('contact.html', 
 							form=form, 
-							name=session.get('name'),
-							email=session.get('email'), 
-							message=session.get('message'), 
+							# name=session.get('name'),
+							# email=session.get('email'), 
+							# message=session.get('message'), 
 							pages=pages, 
 							social_icons=social_icons)
