@@ -233,3 +233,12 @@ div.footer {
 footer a {
   flex-grow: 1;
 }
+
+footer.contact a {
+  color: #c4be8d;
+}
+@media (min-width: 400px) {
+  footer.contact {
+    padding-top: 0.3em;
+  }
+}

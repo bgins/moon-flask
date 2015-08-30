@@ -24,5 +24,6 @@ def page(name):
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
 	pages = Page.query.all()
+	social_icons = SocialIcon.query.all()
 	form = ContactForm()
-	return render_template('contact.html', form=form, pages=pages)
+	return render_template('contact.html', form=form, pages=pages, social_icons=social_icons)
