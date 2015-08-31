@@ -3,8 +3,8 @@ from flask import render_template, url_for, session, redirect, flash
 
 from app.models import User, Page, Post, SocialIcon
 from app.forms import ContactForm
-
-
+from app.email import send_email
+from config import MAIL_USERNAME
 
 @app.route('/')
 def index():
@@ -32,15 +32,14 @@ def contact():
 	social_icons = SocialIcon.query.all()
 	form = ContactForm()
 	if form.validate_on_submit():
-		# session['name'] = form.name.data
-		# session['email'] = form.email.data
-		# session['message'] = form.message.data
+		name = form.name.data
+		email = form.email.data
+		message = form.message.data
+		send_email(MAIL_USERNAME, 'Contact', 'mail/contact',
+				   name=name, email=email, message=message)
 		flash('Your message has been sent!')
 		return redirect(url_for('contact'))
 	return render_template('contact.html', 
 							form=form, 
-							# name=session.get('name'),
-							# email=session.get('email'), 
-							# message=session.get('message'), 
 							pages=pages, 
 							social_icons=social_icons)
