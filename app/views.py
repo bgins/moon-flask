@@ -6,6 +6,7 @@ from app.forms import ContactForm
 from app.email import send_email
 from config import MAIL_USERNAME
 
+
 @app.route('/')
 def index():
 	user = User.query.first()

@@ -13,5 +13,4 @@ MAIL_USE_TLS = False
 MAIL_USE_SSL = True
 MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
 MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-MOON_MAIL_SUBJECT_PREFIX = 'Moon-Flask'
-MOON_MAIL_SENDER = 'Moon-Flask admin <moon-flask@example.com>'
+MOON_MAIL_SUBJECT_PREFIX = '[Moon-Flask] '
