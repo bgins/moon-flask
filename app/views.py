@@ -44,3 +44,15 @@ def contact():
 							form=form, 
 							pages=pages, 
 							social_icons=social_icons)
+
+
+@app.errorhandler(404)
+def not_found_error(error):
+	pages = Page.query.all()
+	return render_template('404.html', pages=pages), 404
+
+
+@app.errorhandler(500)
+def internal_error(error):
+	pages = Page.query.all()
+	return render_template('500.html', pages=pages), 500
