@@ -241,7 +241,8 @@ nav ul.page {
 }
 /*Spacer between flexbox items*/
 nav.page li {
-  border-left: 15px solid transparent;
+  border-left: 1.1em solid transparent;
+  border-right: 1.1em solid transparent;
 }
 nav.page a {
   color: #EEE6AB;
@@ -249,6 +250,12 @@ nav.page a {
 nav.page a:hover {
   color: #fa3c4b;
   transition: color 0.9s ease-out;
+}
+@media (min-width: 400px) {
+  nav.page li {
+    border-left: 0.4em solid transparent;
+    border-right: 0.4em solid transparent;
+  }
 }
 
 
