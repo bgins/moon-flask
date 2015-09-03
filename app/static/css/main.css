@@ -1,10 +1,8 @@
-
 /*General*/
 body, input, button, textarea {
-  /*Global font*/
+  font-family: 'Asul', sans-serif;
 }
 body {
-  font-family: 'Asul', sans-serif;
   text-align: center;
   margin: 0;
   color: #232526;
@@ -20,19 +18,20 @@ a {
   display: block;
   color: #36393B;
   text-decoration: none;
-  transition: color 0.8s ease-out;
+  transition: color 0.7s ease-out;
 }
 a:hover {
   color: #ba2d38;
-  transition: color 0.8s ease-out;
+  transition: color 0.7s ease-out;
 }
 img {
   max-width: 100%;
 }
 
 
+
 /*Typography*/
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   font-weight: normal;
 }
 h1 {
@@ -56,10 +55,12 @@ h3 {
   letter-spacing: 0.001em;
   line-height: 1.5em;
 }
+h4, h5 {
+  letter-spacing: 0.05em;
+}
 p {
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
-  /*font-size:*/
 }
 
 
@@ -76,11 +77,11 @@ header {
   }
 }
 
+/*Preheader only used in index.html*/
 div.preheader {
   padding-top: 1em;
 }
-/*Prefix this semantically*/
-.profile-picture {
+div.preheader img {
   width: 125px;
   height: 125px;
   margin-bottom: -55px;
@@ -91,6 +92,7 @@ div.preheader {
   display: inline-block;
 }
 
+/*Header for page.html*/
 header.page {
   padding-top: 0;
   margin-bottom: 2em;
@@ -105,12 +107,12 @@ header.page {
   }
 }
 header.page img {
-  /*width: 20%;*/
   max-width: 11em;
   margin: 3em 0 1.5em;
   display: inline-block;
 }
 
+/*Header for contact.html*/
 header.contact {
   padding: 0 0 0.5em;
 }
@@ -126,6 +128,7 @@ header.contact h2 {
   }
 }
 
+/*Header for error.html*/
 header.error {
   padding-top: 0;
 }
@@ -135,7 +138,7 @@ header.error img {
 
 
 
-/*Sections*/
+/*Sections for page.html*/
 section.posts p {
     font-size: 1.5em;
 }
@@ -151,6 +154,7 @@ section.posts img {
   margin-bottom: 1em;
 }
 
+/*Sections for contact.html*/
 section.contact span {
   font-size: 1.2em;
 }
@@ -165,19 +169,19 @@ section.contact div.submit {
 }
 
 
+
 /*Form Elements*/
 form {
-  padding-top: 1em;
+  padding-top: 0.8em;
 }
 label {
-  font-size: 1.2em;
+  letter-spacing: 0.05em;
 }
 input[type="text"],
 textarea {
   background-color: #fffdf0;
 }
 input[type="submit"] {
-  font-family: 'Asul', sans-serif;
   color: #c4be8d;
   border: 1px solid #c4be8d;
   transition: color 0.3s ease-out, border 0.3s ease-out;
@@ -189,10 +193,10 @@ input[type="submit"]:hover {
 }
 
 
+
 /*Navigation*/
 nav {
   font-size: 1em;
-  /*font-family:*/
 }
 nav ul {
   display: flex; 
@@ -205,6 +209,7 @@ nav li {
   line-height: 2em;
 }
 
+/*Navigation for index.html*/
 nav.about {
   font-size: 2em;
   padding-top: 0.5em;
@@ -221,7 +226,6 @@ nav.about li:nth-child(2n) {
     padding-top: 2em;
   }
   nav.about li {
-    /*padding-bottom: 0.5em;*/
     line-height: 1em;
   }
   nav.about li:nth-child(2n) {
@@ -232,6 +236,7 @@ nav.about li:nth-child(2n) {
   }
 }
 
+/*Navigation for page.html*/
 nav.page {
   font-size: 1.3em;
   line-height: 1.5em;
@@ -250,7 +255,6 @@ nav.page a {
 }
 nav.page a:hover {
   color: #fa3c4b;
-  transition: color 0.9s ease-out;
 }
 @media (min-width: 400px) {
   nav.page li {
@@ -259,8 +263,6 @@ nav.page a:hover {
   }
 }
 
-
-/*Other specific elements*/
 
 
 /*Footer*/
@@ -281,8 +283,12 @@ footer a:hover {
     color: #000;
 }
 
+/*Footer for contact.html*/
 footer.contact a {
   color: #c4be8d;
+}
+footer.contact a:hover {
+  color: #eee6ab;
 }
 @media (min-width: 400px) {
   footer.contact {

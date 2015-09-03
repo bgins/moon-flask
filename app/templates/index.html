@@ -2,9 +2,9 @@
 
 {% block header %}
 <body>
-	<div class="container">
-		<div class="preheader row">
-			<a href="#"><img class="profile-picture" src="{{ url_for('static', filename='img/{}.jpg'.format(user.username).replace(' ','')) }}" /></a>
+	<div class="preheader container">
+		<div class="row">
+			<a href="#"><img src="{{ url_for('static', filename='img/{}.jpg'.format(user.username).replace(' ','')) }}" /></a>
 		</div>
 	</div>
 	<header>
