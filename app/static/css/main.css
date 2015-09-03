@@ -58,6 +58,7 @@ h3 {
 }
 p {
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
   /*font-size:*/
 }
 
@@ -275,6 +276,9 @@ div.footer {
 }
 footer a {
   flex-grow: 1;
+}
+footer a:hover {
+    color: #000;
 }
 
 footer.contact a {
