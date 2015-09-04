@@ -1,6 +1,6 @@
 # moon-flask
 
-Moon-Flask is a simple portfolio web app built on Flask. The app with a base set of styles and a sample user; namely, the Early Renaissance painter [Paolo Uccello](https://en.wikipedia.org/wiki/Paolo_Uccello).
+Moon-Flask is a simple portfolio web app built on Flask. The app comes with a base set of styles and a sample user; namely, the Early Renaissance painter [Paolo Uccello](https://en.wikipedia.org/wiki/Paolo_Uccello). Paolo is a great sample user because his paintings are fantastic and in the public domain.
 
 The app comes with standard 'about' and 'contact' page. All of the other 'pages' and their navigation links are generated dynamically from a database. 
 
@@ -16,7 +16,7 @@ git clone https://github.com/thuselem/moon-flask
 ```
 
 <h4>Set up a virtual envinronment</h4>
-Setting up a virtual environment has an unfortunate number of inconsistencies among operating systems and versions of Python. The following works on Ubuntu Linux 15.04. This will set up a Python 3.4 virtual environment.
+Setting up a virtual environment has an unfortunate number of inconsistencies among operating systems and versions of Python. The following works on Ubuntu Linux. This will set up a Python 3.4 virtual environment.
 ```
 virtualenv -p /usr/bin/python3.4 moon-flask
 ```
@@ -45,7 +45,7 @@ export SECRET_KEY='Crazy, long string'
 export MAIL_USERNAME='email username'
 export MAIL_PASSWORD='email password'
 ```
-The current flask-mail settings are configured for a Yahoo account. I tried using Gmail, but simply could not get it to work. If you wish to try Gmail, make sure to set `MAIL_USE_TLS` to `True` and `MAIL_USE_SSL` to `False` in `config.py`
+The current flask-mail settings are configured for a Yahoo account. I tried using Gmail, but simply could not get it to work. If you wish to try Gmail, change the email settings in `config.py`.
 
 <h2>Run Moon-Flask Locally</h2>
 <h4>Activate the virtual environment</h4>
@@ -71,7 +71,7 @@ For now, the content must be managed manually.
 
 The app uses SQLAlchemy and SQLite by default. Change `SQLALCHEMY_DATABASE_URI` in `config.py` to use another database. The script `build_db.py` creates the sample user SQLite database `data.sqlite`.
 
-Use the commands in `build_db.py` as a model for items you wish to add. Lines can be replaced in this script, but make sure include you include your additions in `db.session.add_all()` before the commit.
+Use the commands in `build_db.py` as a model for items you wish to add. Lines can be replaced in this script, but make sure include you include your additions in `db.session.add_all()` before the commit. Note that you cannot write over existing database entries. Delete the lines for existing entries before making your additions, or delete `data.sqlite` and build the database from scratch.
 
 Items can also be added, deleted or modified in the shell by running:
 ```
@@ -81,12 +81,12 @@ python run.py shell
 
 The fields for the social icons are the 'href' link for you social media profile page and the 'css_value' for the icon using Font-Awesome. Here is the [Font-Awesome cheatsheet](https://fortawesome.github.io/Font-Awesome/cheatsheet/). See the Font-Awesome documentation for details on resizing and manipulating icons.
 
-Images must be placed in the `app/static/img/ folder`. They must be .jpg files. Their name must match the 'name' field of their corresponding 'Page' or 'title' for 'Post' images. Remove spaces and keep caps the same.
+Images must be placed in the `app/static/img/ folder`. They must be .jpg files. Their name must match the 'name' field of their corresponding 'Page' or 'title' for 'Post' images. Remove spaces and keep caps the same. For example, a Post with the title "The Bridges of Portland" would have a corresponding image named "TheBridgesofPortland.jpg".
 
 <h2>To do</h2>
 This app can be improved. Here is my list of the top improvements:<br/>
 1. Admin panel for managing content<br/>
-2. Proper Error handling in contact.py<br/>
+2. Proper error handling in contact.py<br/>
 3. Chronological display of posts<br/>
 4. Aync email<br/>
 5. Support for multiple users
