@@ -38,16 +38,20 @@
 		<div class="container">
 			{% for post in posts %}
 				{% if post.page.name == name %}
-				<div class="row">
-					<h3>{{ post.title }}</h3>
-				</div>
-				<div class="row">
-					<p>{{ post.body }}</p>
-				</div>
+					{% if post.title %}
+						<div class="row">
+							<h3>{{ post.title }}</h3>
+						</div>
+					{% endif %}
+					{% if post.body %}
+						<div class="row">
+							<p>{{ post.body|safe }}</p>
+						</div>
+					{% endif %}
 					{% if post.image %}
-					<div class="row">
-						<img src="{{ url_for('static', filename='img/{}.jpg'.format(post.title).replace(' ','')) }}" />
-					</div>
+						<div class="row">
+							<img src="{{ url_for('static', filename='img/{}.jpg'.format(post.title).replace(' ','')) }}" />
+						</div>
 					{% elif post.embed %}
 						{{ post.embed|safe }}
 					{% endif %}				
@@ -61,7 +65,7 @@
 			<div class="row">
 				<div class="footer six offset-by-three columns">
 					{% for icon in social_icons %}
-					<a href="{{ ''.join(['https://', icon.href]) }}"><span class="{{ icon.css_value }}"></span></a>
+					<a href="{{ ''.join(['https://', icon.href]) }}" target="_blank"><span class="{{ icon.css_value }}"></span></a>
 					{% endfor %}
 				</div>
 			</div>

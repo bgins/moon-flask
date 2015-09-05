@@ -30,7 +30,7 @@ polyhedra_page = Page(name="Polyhedra",
 
 # posts
 dragons_post = Post(title="Dragons in our Times.", 
-					body="Lorem ipsum dolor sit amet, consectetur adipiscing \
+					body='Lorem ipsum dolor sit amet, consectetur adipiscing \
 					elit. Ut et eros ante. Pellentesque tempor posuere diam \
 					eget vulputate. Maecenas dignissim leo turpis, quis \
 					vestibulum tortor pulvinar eget. Maecenas nec turpis ex. \
@@ -38,29 +38,31 @@ dragons_post = Post(title="Dragons in our Times.",
 					posuere tincidunt nunc non mattis. Duis at urna sit amet \
 					mi pharetra tincidunt. Phasellus diam massa, finibus nec \
 					vulputate sed, molestie nec leo. Morbi ultricies consequat \
-					odio, sed pulvinar ex vestibulum eu. Etiam cursus ornare \
-					lacus, non hendrerit sem ultricies non. Morbi eget \
-					placerat felis, ac blandit urna.",
+					odio, sed pulvinar ex vestibulum eu. <i>Etiam cursus \
+					ornare </i> lacus, non hendrerit sem ultricies non. Morbi eget \
+					placerat felis, ac blandit urna.',
 					image=False,
 					author=user_moon, 
 					page=dragons_page)
 stgeorge_post = Post(title="St. George and the Dragon", 
-					 body="Pellentesque sed erat erat. Donec lacus purus, \
-					 fermentum ut urna vitae, pretium varius orci. Aliquam \
-					 ultrices dolor ut iaculis accumsan. Praesent quis pretium \
-					 dolor. Phasellus eget faucibus metus. In hac habitasse \
-					 platea dictumst. Donec ut diam eros. Aenean convallis \
-					 orci eu feugiat vestibulum. In et facilisis lorem. Class \
-					 aptent taciti sociosqu ad litora torquent per conubia \
-					 nostra, per inceptos himenaeos. Suspendisse potenti. \
-					 Vivamus commodo vulputate neque at posuere. Quisque \
-					 laoreet pulvinar massa, id varius quam efficitur ut. \
-					 Phasellus ultricies magna eu aliquam convallis.", 
+					 body='Pellentesque sed erat erat. Donec lacus purus, \
+					 fermentum ut urna vitae, pretium varius orci. \
+					 <a href="https://en.wikipedia.org/wiki/Saint_George" \
+					 target="_blank"> St. George aliquam ultrices dolor</a> \
+					 ut iaculis accumsan. Praesent quis pretium dolor. \
+					 Phasellus eget faucibus metus. In hac habitasse platea \
+					 dictumst. Donec ut diam eros. Aenean convallis orci eu \
+					 feugiat vestibulum. In et facilisis lorem. Class aptent \
+					 taciti sociosqu ad litora torquent per conubia nostra, \
+					 per inceptos himenaeos. Suspendisse potenti. Vivamus \
+					 commodo vulputate neque at posuere. Quisque laoreet \
+					 pulvinar massa, id varius quam efficitur ut. Phasellus \
+					 ultricies magna eu aliquam convallis.', 
 					 image=True, 
 					 author=user_moon, 
 					 page=dragons_page)
 hermits_post = Post(title="Episodes of the Hermit Life", 
-					body="Pellentesque sed erat erat. Donec lacus purus, \
+					body='Pellentesque sed erat erat. Donec lacus purus, \
 					fermentum ut urna vitae, pretium varius orci. Aliquam \
 					ultrices dolor ut iaculis accumsan. Praesent quis pretium \
 					dolor. Phasellus eget faucibus metus. In hac habitasse \
@@ -70,24 +72,26 @@ hermits_post = Post(title="Episodes of the Hermit Life",
 					inceptos himenaeos. Suspendisse potenti. Vivamus commodo \
 					vulputate neque at posuere. Quisque laoreet pulvinar massa, \
 					id varius quam efficitur ut. Phasellus ultricies magna eu \
-					aliquam convallis.", 
+					aliquam convallis.', 
 					image=True, 
 					author=user_moon, 
 					page=hermits_page)
 sketch_post = Post(title="Perspective Study of Mazzocchio", 
-				   body="Integer elementum nulla ut erat dapibus euismod. \
+				   body='Integer elementum nulla ut erat dapibus euismod. \
 				   Mauris ut libero sit amet risus aliquam gravida. \
 				   Suspendisse in porta leo. Maecenas vitae porttitor nulla. \
 				   Suspendisse luctus laoreet sollicitudin. Curabitur \
 				   vestibulum dui ut luctus auctor. Quisque eget mi vitae nibh \
-				   tincidunt rutrum. Pellentesque ac odio euismod, maximus \
-				   nulla sit amet, eleifend erat. Vivamus nec consectetur \
-				   turpis, ac mattis tortor.", 
+				   tincidunt rutrum. Pellentesque ac odio euismod, \
+				   <a href="https://en.wikipedia.org/wiki/Polyhedron" \
+				   target="_blank">polyhedra</a> maximus nulla sit amet, \
+				   eleifend erat. Vivamus nec consectetur turpis, ac mattis \
+				   tortor.', 
 				   image=True, 
 				   author=user_moon, 
 				   page=polyhedra_page)
-shapes_post = Post(title="More Shapes", 
-				   body="Mauris metus nisl, lobortis quis ex sed, dignissim \
+sketch_pt2_post = Post(title="", 
+				   body='Mauris metus nisl, lobortis quis ex sed, dignissim \
 				   eleifend libero. In ullamcorper id libero vel fermentum. \
 				   Sed hendrerit nisl at dolor laoreet, quis mollis quam \
 				   dictum. Etiam nec ipsum neque. Maecenas posuere lectus nec \
@@ -97,13 +101,13 @@ shapes_post = Post(title="More Shapes",
 				   semper sit amet. Nullam nec ex at odio molestie ullamcorper \
 				   fringilla eu enim. Curabitur sollicitudin a lacus vel \
 				   interdum. Nulla facilisi. Sed eleifend pulvinar leo, et \
-				   mollis risus mollis in.",
+				   mollis risus mollis in.',
 				   image=False, 
 				   author=user_moon, 
 				   page=polyhedra_page)
 embed_post = Post(title="Embed in an Iframe", 
-				  body="Paolo does not have any work to embed. This post shows \
-				  you can add an embed in place of an image.",
+				  body='Paolo does not have any work to embed. This post shows \
+				  you can add an embed in place of an image.',
 				  image=False, 
 				  embed='<iframe width="100%" height="166" scrolling="no" \
 				  frameborder="no" \
@@ -128,8 +132,8 @@ github_icon = SocialIcon(href="github.com",
 # add to session
 db.session.add_all([user_moon, dragons_page, hermits_page, polyhedra_page,
 				    dragons_post, stgeorge_post, hermits_post, sketch_post,
-				    shapes_post, embed_post, deviant_art_icon, twitter_icon,
-				    github_icon])
+				    sketch_pt2_post, embed_post, deviant_art_icon, 
+				    twitter_icon, github_icon])
 
 # commit
 db.session.commit()
