@@ -1,5 +1,5 @@
 from app import app, db
-from flask import render_template, url_for, session, redirect, flash
+from flask import render_template, url_for, session, redirect, flash, abort
 
 from app.models import User, Page, Post, SocialIcon
 from app.forms import ContactForm
@@ -16,6 +16,8 @@ def index():
 
 @app.route('/page/<name>')
 def page(name):
+	if not Page.query.filter_by(name=name).first():
+		abort(404)
 	pages = Page.query.all()
 	posts = Post.query.all()
 	social_icons = SocialIcon.query.all()
