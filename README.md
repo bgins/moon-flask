@@ -2,11 +2,9 @@
 
 Moon-Flask is a simple portfolio web app built on Flask. The app comes with a base set of styles and a sample user; namely, the Early Renaissance painter [Paolo Uccello](https://en.wikipedia.org/wiki/Paolo_Uccello). Paolo is a great sample user because his paintings are fantastic and in the public domain.
 
-The app comes with standard 'about' and 'contact' page. All of the other 'pages' and their navigation links are generated dynamically from a database. 
+The app comes with standard 'about' and 'contact' page. All of the other 'pages' and their navigation links are generated dynamically from a database. The database is managed with SQLAlchemy.
 
-Moon-Flask uses [Skeleton CSS](http://getskeleton.com/) for managing layout and [Font-Awesome](https://fortawesome.github.io/Font-Awesome/) for social icons. 
-
-The database is managed with SQLAlchemy. Although the database models are built with multiple users in mind, at this point the app will only work for one user.
+Moon-Flask uses [Skeleton CSS](http://getskeleton.com/) for layout and [Font-Awesome](https://fortawesome.github.io/Font-Awesome/) for social icons. 
 
 <h2>Deploy</h2>
 <h4>Clone the repository</h4>
@@ -61,15 +59,27 @@ python run.py runserver
 python run.py runserver -d
 ```
 
-<h2>Configuring a Web Server</h2>
+<h2>Configure a Web Server</h2>
 This is a large topic. I will link to a good set of instructions after testing server deployment.
+
+<h2>Data Models and How They are Rendered</h2>
+`ERD.png` details the database models and their fields. A User can have many Pages and Posts, and each Page can have many Posts. A User can also have many Social Icons. Although the database models are built with multiple users in mind, at this point the app will only work for one user.
+
+Each Page has a 'name' and a 'description'. Both are displayed in the header, 'name' as the page heading and 'description' as a subheading. The 'image' field is a boolean value. If `True`, the 'page' template will display a properly named image above the page heading. See the note below on the naming images.
+
+Each Post has a 'title' and 'body'. The 'title' and 'body' are displayed post headings and bodies respectively. As with Pages, 'image' is a boolean test for an image associated with the Post. Each Post can render an 'image' <i>or</i> an 'embed'. The 'embed' is an iframe tag, including all html elements.
+
+All of the Post fields are optional. This allows for modular construction of a Post. For example, longer posts could be built from multiple posts stiched together leaving out the 'title' field where appropriate. Posts could be just a 'title' and 'image'. To skip a field assign it an empty string or set 'image' to `False`.
+
+The Social Icons are displayed at the bottom of the 'contact' and each 'page' template. The fields for the social icons are the 'href' link for you social media profile page and the 'css_value' for the icon using Font-Awesome. Here is the [Font-Awesome cheatsheet](https://fortawesome.github.io/Font-Awesome/cheatsheet/). See the Font-Awesome documentation for details on resizing and manipulating icons.
+
+<h4>Naming Images</h4>
+Images must be placed in the `app/static/img/ folder`. They must be .jpg files. Their name must match the 'name' field of their corresponding 'Page' or 'title' for 'Post' images. Remove spaces and keep caps the same. For example, a Post with the title "The Bridges of Portland" would have a corresponding image named "TheBridgesofPortland.jpg".
 
 <h2>Manage Content</h2>
 Moon-Flask does not have an Admin panel for managing content at this point. It will be better when it does. 
 
-For now, the content must be managed manually. 
-
-The app uses SQLAlchemy and SQLite by default. Change `SQLALCHEMY_DATABASE_URI` in `config.py` to use another database. The script `build_db.py` creates the sample user SQLite database `data.sqlite`.
+For now, the content must be managed manually.
 
 Use the commands in `build_db.py` as a model for items you wish to add. Lines can be replaced in this script, but make sure include you include your additions in `db.session.add_all()` before the commit. Note that you cannot write over existing database entries. Delete the lines for existing entries before making your additions, or delete `data.sqlite` and build the database from scratch.
 
@@ -77,11 +87,9 @@ Items can also be added, deleted or modified in the shell by running:
 ```
 python run.py shell
 ```
-`ERD.png` also details the database models and their fields. The primary key 'id' field is automatic and need not be assigned.
+The primary key 'id' field is automatic and need not be assigned.
 
-The fields for the social icons are the 'href' link for you social media profile page and the 'css_value' for the icon using Font-Awesome. Here is the [Font-Awesome cheatsheet](https://fortawesome.github.io/Font-Awesome/cheatsheet/). See the Font-Awesome documentation for details on resizing and manipulating icons.
-
-Images must be placed in the `app/static/img/ folder`. They must be .jpg files. Their name must match the 'name' field of their corresponding 'Page' or 'title' for 'Post' images. Remove spaces and keep caps the same. For example, a Post with the title "The Bridges of Portland" would have a corresponding image named "TheBridgesofPortland.jpg".
+The app uses SQLAlchemy and SQLite by default. Change `SQLALCHEMY_DATABASE_URI` in `config.py` to use another database. The script `build_db.py` creates the sample user SQLite database `data.sqlite`.
 
 <h2>To do</h2>
 This app can be improved. Here is my list of the top improvements:<br/>
