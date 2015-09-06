@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}<title>{{ name }} | {{ super() }}</title>{% endblock %}
+
+
+
 {% block header %}
 <body>
 	<header class="page">
