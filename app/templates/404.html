@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% block title %}<title>404 Not Found | {{ super() }}</title>{% endblock %}
 
 {% block header %}
 <body class="error">
@@ -23,7 +24,7 @@
 			</div>
 			<div class="row">
 					<h2>404</h2>
-					<h4>We looked for that page, but it escapes us. Please select one of the pages above.</h4>
+					<h4>We searched for your requested page, but it escapes us. Please select from one of the pages above.</h4>
 			</div>
 		</div>
 	</header>
