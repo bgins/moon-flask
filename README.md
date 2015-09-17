@@ -99,4 +99,4 @@ This app can be improved. Here is my list of the top improvements:<br/>
 4. Aync email<br/>
 5. Support for multiple users
 
-Being real, I am neophyte Flask developer. I am welcome to any suggestions or best practice recommendations. Thank you!
+Being real, I am neophyte Flask developer. I welcome any suggestions or best practice recommendations. Thank you!
