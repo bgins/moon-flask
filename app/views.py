@@ -56,5 +56,6 @@ def not_found_error(error):
 
 @app.errorhandler(500)
 def internal_error(error):
+	app.logger.error(error)
 	pages = Page.query.all()
 	return render_template('500.html', pages=pages), 500
