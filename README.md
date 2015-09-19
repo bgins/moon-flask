@@ -10,53 +10,57 @@ Moon Flask uses [Skeleton CSS](http://getskeleton.com/) for layout and [Font-Awe
 <h4>Clone the Repository</h4>
 Navigate to the folder where you want Moon Flask to live, then clone the repository:
 ```
-git clone https://github.com/thuselem/moon-flask
+$ git clone https://github.com/thuselem/moon-flask
 ```
 
 <h4>Set up a Virtual Environment</h4>
-Setting up a virtual environment has an unfortunate number of inconsistencies among operating systems and versions of Python. The following works on Ubuntu Linux. This will set up a Python 3.4 virtual environment.
+Setting up a virtual environment has a number of inconsistencies among operating systems and versions of Python. The following will work on Ubuntu Linux and Mac OS X. This will set up a Python 3.4 virtual environment.
 ```
-virtualenv -p /usr/bin/python3.4 moon-flask
+$ virtualenv -p python3.4 moon-flask
 ```
-If you do not have virtualenv installed:
+If you do not have `virtualenv` installed:
 ```
-sudo apt-get install python-virtualenv
+$ sudo apt-get install python-virtualenv
 ```
-For virtual environment setup on other systems, check out [Miguel Grinberg's Flask Mega-Tutorial Part I] (http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world). Install the virtualenv to the moon-flask directory, then stop where the tutorial instructs you to install Flask and the other extensions. These are installed next.
+On Mac OS X:
+```
+$ sudo easy_install virtualenv
+```
+For virtual environment setup on other systems, check out [Miguel Grinberg's Flask Mega-Tutorial Part I] (http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world). Create the virtual environmental in the `moon-flask` directory, then stop where the tutorial instructs you to install Flask and the other extensions. These are installed next.
 
 <h4>Install the Requirements</h4>
 ```
-cd moon-flask
-source bin/activate
-pip install -r requirements.txt
+$ cd moon-flask
+$ source bin/activate
+$ pip install -r requirements.txt
 ```
 
 <h4>Build the Sample Database</h4>
 ```
-python build_db.py
+$ python build_db.py
 ```
 
 <h4>Set the Environment Variables</h4>
 Environment variables must be set for `SECRET_KEY`, `MAIL_USERNAME` and `MAIL_PASSWORD`. Even though a default is included for `SECRET_KEY`, please make up your own and keep it in the environment for the best CSRF protection. If you are running Moon Flask locally, the variables can be set at the command line. On Linux:
 ```
-export SECRET_KEY='Crazy, long string'
-export MAIL_USERNAME='email username'
-export MAIL_PASSWORD='email password'
+$ export SECRET_KEY='Crazy, long string'
+$ export MAIL_USERNAME='email username'
+$ export MAIL_PASSWORD='email password'
 ```
 The current flask-mail settings are configured for a Yahoo account. I tried using Gmail, but simply could not get it to work. If you wish to try Gmail, change the email settings in `config.py`.
 
 <h2>Run Moon Flask Locally</h2>
 <h4>Activate the virtual environment</h4>
 ```
-source bin/activate
+$ source bin/activate
 ```
 <h4>Start the Development Server</h4>
 ```
-python run.py runserver
+$ python run.py runserver
 ```
 <h4>Debug Mode</h4>
 ```
-python run.py runserver -d
+$ python run.py runserver -d
 ```
 
 <h2>Configure a Web Server</h2>
@@ -85,7 +89,7 @@ Use the commands in `build_db.py` as a model for items you wish to add. Lines ca
 
 Items can also be added, deleted or modified in the shell by running:
 ```
-python run.py shell
+$ python run.py shell
 ```
 The primary key 'id' field is automatic and need not be assigned.
 
