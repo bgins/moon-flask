@@ -14,7 +14,9 @@ $ git clone https://github.com/thuselem/moon-flask
 ```
 
 <h4>Set up a Virtual Environment</h4>
-Setting up a virtual environment has a number of inconsistencies among operating systems and versions of Python. The following will work on Ubuntu Linux and Mac OS X. This will set up a Python 3.4 virtual environment.
+Setting up a virtual environment has a number of inconsistencies among operating systems and versions of Python. This app has been tested with Python 3.4.
+
+The following will set up a Python 3.4 virtual environment on Mac OS X or Linux:
 ```
 $ virtualenv -p python3.4 moon-flask
 ```
@@ -62,6 +64,7 @@ $ python run.py runserver
 ```
 $ python run.py runserver -d
 ```
+Once you have started the development server, navigate to `localhost:5000` in your favorite web browser to view the running app.
 
 <h2>Configure a Web Server</h2>
 This is a large topic. When I find a reliable set of instructions, I will provide a link.
