@@ -22,7 +22,7 @@ The following will set up a Python 3.4 virtual environment on Mac OS X or Linux:
 ```
 $ virtualenv -p python3.4 moon-flask
 ```
-If you do not have `virtualenv` installed:
+If you do not have `virtualenv`, install it with your package manager. For example, on Ubuntu:
 ```
 $ sudo apt-get install python-virtualenv
 ```
