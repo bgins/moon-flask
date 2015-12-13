@@ -6,11 +6,11 @@ The app comes with standard 'about' and 'contact' page. All of the other 'pages'
 
 Moon Flask uses [Skeleton CSS](http://getskeleton.com/) for layout and [Font-Awesome](https://fortawesome.github.io/Font-Awesome/) for social icons.
 
-The app comes with a sample set of CSS styles and a sample user; namely, the Early Renaissance painter [Paolo Uccello](https://en.wikipedia.org/wiki/Paolo_Uccello). Paolo is a great sample user because his paintings are fantastic!
+The app comes with a sample set of content, styles and a sample user; namely, the Early Renaissance painter [Paolo Uccello](https://en.wikipedia.org/wiki/Paolo_Uccello).
 
 <h2>Deploy</h2>
 <h4>Clone the Repository</h4>
-Make a folder for Moon Flask, then clone the repository in it:
+Make a folder for Moon Flask, then clone the repository into it:
 ```
 $ git clone https://github.com/thuselem/moon-flask
 ```
