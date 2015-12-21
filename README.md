@@ -2,7 +2,7 @@
 
 Moon Flask is a simple portfolio web app built on Flask. 
 
-The app comes with standard 'about' and 'contact' page. All of the other 'pages' and their navigation links are generated dynamically from a database. The database is managed with SQLAlchemy.
+The app comes with standard 'about' and 'contact' pages. All of the other 'pages' and their navigation links are generated dynamically from a database. The database is managed with SQLAlchemy.
 
 Moon Flask uses [Skeleton CSS](http://getskeleton.com/) for layout and [Font-Awesome](https://fortawesome.github.io/Font-Awesome/) for social icons.
 
@@ -66,7 +66,7 @@ $ python run.py runserver
 ```
 $ python run.py runserver -d
 ```
-Once you have started the development server, navigate to `localhost:5000` in your favorite web browser to view the running app.
+Once you have started the development server, navigate to `localhost:5000` in a web browser to view the app. To stop the development server, press Ctrl-C at the command line.
 
 <h2>Configure a Web Server</h2>
 This is a large topic. When I find a reliable set of instructions, I will provide a link.
