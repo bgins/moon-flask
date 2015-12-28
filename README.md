@@ -2,9 +2,7 @@
 
 Moon Flask is a simple portfolio web app built on Flask. 
 
-The app comes with 'about' and 'contact' pages, and generates additional pages and their navigation links from a database.
-
-Moon Flask uses [SQLAlchemy](http://www.sqlalchemy.org/) for database management, [Skeleton CSS](http://getskeleton.com/) for page layout and [Font-Awesome](https://fortawesome.github.io/Font-Awesome/) for social icons.
+The app comes with 'about' and 'contact' pages, and generates additional pages and their navigation links from a database. Moon Flask uses [SQLAlchemy](http://www.sqlalchemy.org/) for database management, [Skeleton CSS](http://getskeleton.com/) for page layout and [Font-Awesome](https://fortawesome.github.io/Font-Awesome/) for social icons.
 
 The app comes with a sample set of content, styles and a sample user, the Early Renaissance painter [Paolo Uccello](https://en.wikipedia.org/wiki/Paolo_Uccello).
 
