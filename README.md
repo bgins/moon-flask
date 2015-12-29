@@ -1,6 +1,6 @@
 # Moon Flask
 
-Moon Flask is a simple portfolio web app built on Flask. 
+Moon Flask is a simple portfolio web app built on [Flask](http://flask.pocoo.org/). 
 
 The app comes with 'about' and 'contact' pages, and generates additional pages and their navigation links from a database. Moon Flask uses [SQLAlchemy](http://www.sqlalchemy.org/) for database management, [Skeleton CSS](http://getskeleton.com/) for page layout and [Font-Awesome](https://fortawesome.github.io/Font-Awesome/) for social icons.
 
@@ -126,15 +126,15 @@ $ deactivate
 ```
 
 <h2>Data Models and How They are Rendered</h2>
-`ERD.png` details the database model. A User can have many Pages and Posts. Each Page can have many Posts. A User can have many Social Icons. Although the database model is contructed with multiple users in mind, at this point the app will only work for one user.
+`ERD.png` details the database model. A User can have many Pages and Posts. Each Page can have many Posts. A User can have many Social Icons. Although the database model is constructed with multiple users in mind, at this point the app will only work for one user.
 
 Each Page has a 'name' and a 'description'. Both are displayed in the header, 'name' as the page heading and 'description' as a subheading. The 'image' field is a boolean value. If `True`, the 'page' template will display a properly named image above the page heading. See the section below on naming images.
 
-Each Post has a 'title' and 'body'. The 'title' and 'body' are displayed as post headings and bodies respectively. As with Pages, 'image' is a boolean test for an image associated with the Post. Each Post can render an 'image' <i>or</i> an 'embed'. Not both. The 'embed' is an iframe tag, including all html elements.
+Each Post has a 'title' and a 'body'. The 'title' and 'body' are displayed as post headings and bodies respectively. As with Pages, 'image' is a boolean test for an image associated with the Post. Each Post can render an 'image' <i>or</i> an 'embed'. Not both. The 'embed' is an iframe tag, including all HTML elements.
 
-All Post fields are optional. This allows for modular construction of a Post. For example, longer posts could be built from multiple posts stitched together leaving out the 'title' field where appropriate. Posts could be just a 'title' and 'image'. To skip a field assign it an empty string or set 'image' to `False`.
+All Post fields are optional. This allows for modular construction of a Post. For example, longer posts could be built from multiple posts stitched together leaving out the 'title' field where appropriate. Posts could be just a 'title' and 'image'. To skip a field, assign it an empty string or set 'image' to `False`.
 
-The Social Icons are displayed at the bottom of the contact page and each dynamically generated page. The fields for the social icons are the 'href' link of the social media profile and the Font-Awesome 'css_value' for the icon. The [Font-Awesome cheatsheet](https://fortawesome.github.io/Font-Awesome/cheatsheet/) lists the possible icons and their css values. See the Font-Awesome documentation for details on resizing and manipulating icons.
+The Social Icons are displayed at the bottom of the contact page and each dynamically generated page. The fields for social icons are the 'href' link to the social media profile and the Font-Awesome 'css_value' of the desired icon. The [Font-Awesome cheatsheet](https://fortawesome.github.io/Font-Awesome/cheatsheet/) lists all possible icons and their css values. See the [Font-Awesome documentation](http://fontawesome.io/examples/) for details on resizing and manipulating icons.
 
 <h4>Naming Images</h4>
 Images must be placed in the `app/static/img/` folder. They must be .jpg files. Their name must match the 'name' field of their corresponding 'Page' or 'title' field for 'Post' images. Remove spaces and keep the capitalization scheme intact. For example, a Post with the title "The Bridges of Portland" would have a corresponding image named "TheBridgesofPortland.jpg".
@@ -142,7 +142,7 @@ Images must be placed in the `app/static/img/` folder. They must be .jpg files. 
 <h2>Manage Content</h2>
 Moon-Flask does not have an Admin panel for managing content at this point. It will be better when it does. For now, the content must be managed manually.
 
-Use the commands in `build_db.py` as a model for items you wish to add. Lines can be replaced in this script, but make sure to include your additions in `db.session.add_all()` before the commit statement. 
+Use the commands in `build_db.py` as a model for items you wish to add. Lines can be replaced in this script, but make sure to include your additions in the `db.session.add_all()` before the commit statement. 
 
 Items can also be added, deleted or modified in the shell by running:
 ```
@@ -152,14 +152,15 @@ The primary key 'id' field is automatically generated and need not be assigned.
 
 The app uses SQLAlchemy and SQLite by default. Change `SQLALCHEMY_DATABASE_URI` in `config.py` to use another database. The script `build_db.py` builds the SQLite database file `data.sqlite`.
 
-The best way to update the database file is to delete `data.sqlite` and build the database from scratch. Note that SQLite cannot overwrite existing database entries. If you want to to add entries without deleting `data.sqlite`, you must remove any existing database entries.
+The best way to update the database file is to delete `data.sqlite` and build the database from scratch. Note that SQLite cannot overwrite existing database entries. If you want to to add entries without deleting `data.sqlite`, you must remove any existing database entries from `build_db.py`.
 
 <h2>To do</h2>
 This app can be improved. Here are my top improvements:<br/>
-1. Admin panel for managing content<br/>
-2. Proper error handling in contact.py<br/>
+1. Flexible image names and types<br/> 
+2. Better error handling in contact.py<br/>
 3. Chronological display of posts<br/>
 4. Async email<br/>
-5. Support for multiple users
+5. Admin panel for managing content<br/>
+6. Support for multiple users
 
 Being a neophyte Flask developer, I welcome any suggestions and best practice recommendations. Thank you!
