@@ -55,7 +55,7 @@ If you have more than one version of Python on your system, specify Python 3.4:
 ```
 $ virtualenv -p python3.4 moon-flask
 ```
-On Windows, specify the full path of the executable:
+On Windows, specify the full path of the executable. With the default Python installation, this will be:
 ```
 $ virtualenv -p C:\Python34\python.exe moon-flask
 ```
@@ -97,12 +97,12 @@ The `MAIL_USERNAME` and `MAIL_PASSWORD` environment variables are used by the fl
 
 To set these on Mac OS X or Linux:
 ```
-$ export MAIL_USERNAME='email_username'
+$ export MAIL_USERNAME='email_user@example.com'
 $ export MAIL_PASSWORD='email_password'
 ```
 On Windows:
 ```
-$ set MAIL_USERNAME=email_username
+$ set MAIL_USERNAME=email_user@example.com
 $ set MAIL_PASSWORD=email_password
 ```
 
