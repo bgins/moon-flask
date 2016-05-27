@@ -36,7 +36,7 @@ We will use `virtualenv` to create our virtual environment. You can also create 
 
 To install `virtualenv` on Mac OS X:
 ```
-$sudo easy_install virtualenv
+$ sudo easy_install virtualenv
 ```
 On Windows:
 ```
