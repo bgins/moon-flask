@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired, Email
 
 
 class ContactForm(Form):
-	name = StringField('Name',validators=[DataRequired()])
-	email = StringField('Email',validators=[DataRequired(), Email()])
-	message = TextAreaField('Message')
-	submit = SubmitField('Submit')
+    name = StringField('Name',validators=[DataRequired()])
+    email = StringField('Email',validators=[DataRequired(), Email()])
+    message = TextAreaField('Message')
+    submit = SubmitField('Submit')

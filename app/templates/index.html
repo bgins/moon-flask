@@ -4,35 +4,35 @@
 
 {% block header %}
 <body>
-	<div class="preheader container">
-		<div class="row">
-			<a href="#"><img src="{{ url_for('static', filename='img/{}.jpg'.format(user.username).replace(' ','')) }}" /></a>
-		</div>
-	</div>
-	<header>
-		<div class="container">
-			<div class="row">
-				<h1>{{ user.username }}</h1>
-				<h3>{{ user.about }}</h3>
-			</div>
-		</div>
-	</header>
+    <div class="preheader container">
+        <div class="row">
+            <a href="#"><img src="{{ url_for('static', filename='img/{}.jpg'.format(user.username).replace(' ','')) }}" /></a>
+        </div>
+    </div>
+    <header>
+        <div class="container">
+            <div class="row">
+                <h1>{{ user.username }}</h1>
+                <h3>{{ user.about }}</h3>
+            </div>
+        </div>
+    </header>
 
-	</div>
+    </div>
 {% endblock %}
 
 {% block content %}
-	<div class="container">
-		<section class="row">
-			<nav class="about">
-				<ul>
-				{% for page in pages %}
-					<li><a href="{{ url_for('page', name=page.name) }}" class="about">{{ page.name }}</a></li>
-				{% endfor %}
-					<li><a href="{{ url_for('contact') }}" class ="page">Contact</a></li>
-				</ul>
-			</nav>
-		</section>
-	</div>
+    <div class="container">
+        <section class="row">
+            <nav class="about">
+                <ul>
+                {% for page in pages %}
+                    <li><a href="{{ url_for('page', name=page.name) }}" class="about">{{ page.name }}</a></li>
+                {% endfor %}
+                    <li><a href="{{ url_for('contact') }}" class ="page">Contact</a></li>
+                </ul>
+            </nav>
+        </section>
+    </div>
 </body>
 {% endblock %}

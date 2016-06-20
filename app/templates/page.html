@@ -6,74 +6,74 @@
 
 {% block header %}
 <body>
-	<header class="page">
-		<div class="container">	
-			<div class="row">
-				<nav class="page twelve columns">
-					<ul class="page">
-						<li><a href="{{ url_for('index') }}" class ="page">About</a></li>
-					{% for page in pages %}
-						<li><a href="{{ url_for('page', name=page.name) }}" class ="page">{{ page.name }}</a></li>
-					{% endfor %}
-						<li><a href="{{ url_for('contact') }}" class ="page">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
-			{% for page in pages %}
-				{% if page.name == name %}
-					{% if page.image %}
-					<div class="row">
-						<img src="{{ url_for('static', filename='img/{}.jpg'.format(page.name).replace(' ','')) }}" />
-					</div>
-					{% endif %}
-				<div class="row">
-					<h2>{{ page.name }}</h2>
-					<h4>{{ page.description }}</h4>
-				</div>
-				{% endif %}
-			{% endfor %}
-		</div>
-	</header>
+    <header class="page">
+        <div class="container"> 
+            <div class="row">
+                <nav class="page twelve columns">
+                    <ul class="page">
+                        <li><a href="{{ url_for('index') }}" class ="page">About</a></li>
+                    {% for page in pages %}
+                        <li><a href="{{ url_for('page', name=page.name) }}" class ="page">{{ page.name }}</a></li>
+                    {% endfor %}
+                        <li><a href="{{ url_for('contact') }}" class ="page">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            {% for page in pages %}
+                {% if page.name == name %}
+                    {% if page.image %}
+                    <div class="row">
+                        <img src="{{ url_for('static', filename='img/{}.jpg'.format(page.name).replace(' ','')) }}" />
+                    </div>
+                    {% endif %}
+                <div class="row">
+                    <h2>{{ page.name }}</h2>
+                    <h4>{{ page.description }}</h4>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </header>
 {% endblock %}
 
 {% block content %}
-	<!-- Consider adding conditional for title and text, this would allow more modularity in make up of page. -->
-	<section class="posts">
-		<div class="container">
-			{% for post in posts %}
-				{% if post.page.name == name %}
-					{% if post.title %}
-						<div class="row">
-							<h3>{{ post.title }}</h3>
-						</div>
-					{% endif %}
-					{% if post.body %}
-						<div class="row">
-							<p>{{ post.body|safe }}</p>
-						</div>
-					{% endif %}
-					{% if post.image %}
-						<div class="row">
-							<img src="{{ url_for('static', filename='img/{}.jpg'.format(post.title).replace(' ','')) }}" />
-						</div>
-					{% elif post.embed %}
-						{{ post.embed|safe }}
-					{% endif %}				
-				{% endif %}
-			{% endfor %}
-		</div>
-	</section>
+    <!-- Consider adding conditional for title and text, this would allow more modularity in make up of page. -->
+    <section class="posts">
+        <div class="container">
+            {% for post in posts %}
+                {% if post.page.name == name %}
+                    {% if post.title %}
+                        <div class="row">
+                            <h3>{{ post.title }}</h3>
+                        </div>
+                    {% endif %}
+                    {% if post.body %}
+                        <div class="row">
+                            <p>{{ post.body|safe }}</p>
+                        </div>
+                    {% endif %}
+                    {% if post.image %}
+                        <div class="row">
+                            <img src="{{ url_for('static', filename='img/{}.jpg'.format(post.title).replace(' ','')) }}" />
+                        </div>
+                    {% elif post.embed %}
+                        {{ post.embed|safe }}
+                    {% endif %}             
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
 
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="footer six offset-by-three columns">
-					{% for icon in social_icons %}
-					<a href="{{ ''.join(['https://', icon.href]) }}" target="_blank"><span class="{{ icon.css_value }}"></span></a>
-					{% endfor %}
-				</div>
-			</div>
-		</div>
-	</footer>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer six offset-by-three columns">
+                    {% for icon in social_icons %}
+                    <a href="{{ ''.join(['https://', icon.href]) }}" target="_blank"><span class="{{ icon.css_value }}"></span></a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 {% endblock %}

@@ -4,29 +4,29 @@
 
 {% block header %}
 <body class="error">
-	<header class="error">
-		<div class="container">	
-			<div class="row">
-				<nav class="page twelve columns">
-					<ul class="page">
-						<li><a href="{{ url_for('index') }}" class ="page">About</a></li>
-					{% for page in pages %}
-						<li><a href="{{ url_for('page', name=page.name) }}" class ="page">{{ page.name }}</a></li>
-					{% endfor %}
-						<li><a href="{{ url_for('contact') }}" class ="page">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
-			<div class="row">
-					<div class="ten offset-by-one columns">
-						<img src="{{ url_for('static', filename='img/404.jpg') }}" />
-					</div>
-			</div>
-			<div class="row">
-					<h2>404</h2>
-					<h4>We searched for your requested page, but it escapes us. Please select from one of the pages above.</h4>
-			</div>
-		</div>
-	</header>
+    <header class="error">
+        <div class="container"> 
+            <div class="row">
+                <nav class="page twelve columns">
+                    <ul class="page">
+                        <li><a href="{{ url_for('index') }}" class ="page">About</a></li>
+                    {% for page in pages %}
+                        <li><a href="{{ url_for('page', name=page.name) }}" class ="page">{{ page.name }}</a></li>
+                    {% endfor %}
+                        <li><a href="{{ url_for('contact') }}" class ="page">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row">
+                    <div class="ten offset-by-one columns">
+                        <img src="{{ url_for('static', filename='img/404.jpg') }}" />
+                    </div>
+            </div>
+            <div class="row">
+                    <h2>404</h2>
+                    <h4>We searched for your requested page, but it escapes us. Please select from one of the pages above.</h4>
+            </div>
+        </div>
+    </header>
 </body>
 {% endblock %}
