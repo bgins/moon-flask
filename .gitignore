@@ -62,3 +62,6 @@ include/
 
 # Design assets
 design/
+
+# Sqlite file
+data.sqlite
