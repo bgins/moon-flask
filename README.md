@@ -9,22 +9,28 @@ The app comes with a sample set of content, styles and a sample user, the Early 
 <h2>Deploy</h2>
 <h4>Clone the Repository</h4>
 Make a folder for Moon Flask, then clone the repository into it:
+
 ```
 $ git clone https://github.com/thuselem/moon-flask
 ```
+
 <h4>Install Python</h4>
 Moon Flask was developed in Python 3.4. I recommend Python 3.4, but the app will also work in Python 2.7.
 
 On Mac OS X and Windows, you may need to install Python 3.4. Ubuntu Linux 14.04 and later come with Python 3.4 installed. 
 
 Check if Python 3.4 is installed. On Mac OS X or Linux:
+
 ```
 $ python3
 ```
+
 On Windows, enter the full path of the Python 3.4 executable. This should be:
+
 ```
 $ C:\Python34\python.exe
 ```
+
 If Python 3.4 is installed, an interactive shell will open and report Python 3.4. (`exit()` returns you to your command prompt.)
 
 If you do not have Python 3.4, install it now. Installers are available for [Mac OS X](https://www.python.org/downloads/release/python-343/) and [Windows](https://www.python.org/downloads/release/python-343/). Make sure to select the "Add python.exe to Path" on Windows.
@@ -35,49 +41,66 @@ A virtual environment is a sandbox for a Python application. Any extensions and 
 We will use `virtualenv` to create our virtual environment. You can also create your virtual environment using `pyvenv` or `venv` if you prefer.
 
 To install `virtualenv` on Mac OS X:
+
 ```
 $ sudo easy_install virtualenv
 ```
+
 On Windows:
+
 ```
 $ pip install virtualenv
 ```
+
 Use your package manager on Linux distributions. For example, on Ubuntu:
+
 ```
 $ sudo apt-get install python-virtualenv
 ```
+
 <h4>Set up the Virtual Environment</h4>
 If Python 3.4 is your only Python installation:
+
 ```
 $ virtualenv moon-flask
 ```
+
 If you have more than one version of Python on your system, specify Python 3.4:
+
 ```
 $ virtualenv -p python3.4 moon-flask
 ```
+
 On Windows, specify the full path of the executable. With the default Python installation, this will be:
+
 ```
 $ virtualenv -p C:\Python34\python.exe moon-flask
 ```
 
 <h4>Install Flask, SQLAlchemy and Flask Extensions</h4>
 Next we will install the required packages in the virtual environment. First, activate the virtual environment:
+
 ```
 $ cd moon-flask
 $ source bin/activate
 ```
+
 On Windows:
+
 ```
 $ cd moon-flask
 $ Scripts\activate
 ```
+
 Your command line prompt will now start with (moon-flask), indicating the virtual environment is active. Now install the required packages using pip:
+
 ```
 $ pip install -r requirements.txt
 ```
 
 <h4>Build the Sample Database</h4>
 The `build_db.py` script will build a database for our sample user Paolo Uccello:
+
 ```
 $ python build_db.py
 ```
@@ -86,21 +109,28 @@ $ python build_db.py
 Environment variables must be set for `SECRET_KEY`, `MAIL_USERNAME` and `MAIL_PASSWORD`. These variables can be temporarily set at the command line.
 
 Flask uses `SECRET_KEY` to prevent [cross-site request forgery](https://en.wikipedia.org/wiki/Cross-site_request_forgery). A hard-coded default is included for `SECRET_KEY`, but please make up your own key and store it as an environment variable for effective CSRF protection. To set the `SECRET_KEY` on Mac OS X or Linux:
+
 ```
 $ export SECRET_KEY='Crazy,long_string'
 ```
+
 On Windows:
+
 ```
 $ set SECRET_KEY=Crazy,long_string
 ```
+
 The `MAIL_USERNAME` and `MAIL_PASSWORD` environment variables are used by the flask-mail extension. When a user submits the form on the contact page, Moon Flask sends an outgoing mail request to an email server. The message is sent from and delivered to the email address specified in `MAIL_USERNAME`. `MAIL_PASSWORD` authenticates the send request.
 
 To set these on Mac OS X or Linux:
+
 ```
 $ export MAIL_USERNAME='email_user@example.com'
 $ export MAIL_PASSWORD='email_password'
 ```
+
 On Windows:
+
 ```
 $ set MAIL_USERNAME=email_user@example.com
 $ set MAIL_PASSWORD=email_password
@@ -111,16 +141,21 @@ The email server name, port, SSL and TLS are specified in `config.py`. The defau
 <h2>Run Moon Flask Locally</h2>
 <h4>Start the Development Server</h4>
 Make sure your virtual environment is still active, then start the local development server:
+
 ```
 $ python run.py runserver
 ```
+
 <h4>Debug Mode</h4>
 Debug mode provides you with an interactive debugger in the browser. Do not use in production.
+
 ```
 $ python run.py runserver -d
 ```
+
 <h4>Deactivate the virtual environment</h4>
 When you have finished working with Moon Flask, deactivate the virtual environment:
+
 ```
 $ deactivate
 ```
@@ -145,6 +180,7 @@ Moon-Flask does not have an Admin panel for managing content at this point. It w
 Use the commands in `build_db.py` as a model for items you wish to add. Lines can be replaced in this script, but make sure to include your additions in the `db.session.add_all()` before the commit statement. 
 
 Items can also be added, deleted or modified in the shell by running:
+
 ```
 $ python run.py shell
 ```

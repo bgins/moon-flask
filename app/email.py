@@ -1,5 +1,5 @@
 from flask import render_template
-from flask.ext.mail import Message
+from flask_mail import Message
 
 from app import mail
 from config import MAIL_USERNAME, MOON_MAIL_SUBJECT_PREFIX

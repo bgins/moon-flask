@@ -1,8 +1,8 @@
 from flask import Flask
-from flask.ext.migrate import Migrate, MigrateCommand
-from flask.ext.script import Manager, Shell
-from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.mail import Mail
+from flask_migrate import Migrate, MigrateCommand
+from flask_script import Manager, Shell
+from flask_sqlalchemy import SQLAlchemy
+from flask_mail import Mail
 from config import basedir
 
 app = Flask(__name__)
